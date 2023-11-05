@@ -1,6 +1,6 @@
 
 
-def_test_MatteoGuiottoSanchez= 
+var def_test= 
 Array(
     Array('id_programa', 1, 'tamaño menor que 1', false, 'El id del programa debe tener como minimo un digito'),
     Array('id_programa', 2, 'tamaño mayor que 6', false, 'El id del programa debe tener como maximo seis digitos'),
@@ -54,8 +54,6 @@ Array(
     Array('poblacion_hasta_programa', 1, 'tamaño menor que 1', false, 'La poblacion hasta programa debe tener como minimo un digito'),
     Array('poblacion_hasta_programa', 2, 'tamaño mayor que 2', false, 'La poblacion hasta programa debe tener como maximo dos digitos'),
     Array('poblacion_hasta_programa', 3, 'tamaño = 2', true, 'Exito'),
-
-
 
     Array('unidad_poblacion', 1, 'valor != "MESES" o "AÑOS"', false, 'solo puedes elegir los valores "MESES" "AÑOS"'),
     Array('unidad_poblacion', 2, 'valor = "MESES" o "AÑOS"', true, 'Exito'),

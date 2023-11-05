@@ -1,4 +1,4 @@
-class Gestion_personas extends GestionEntidad{
+class  Gestion_personas extends GestionEntidad{
 
     // se puede hacer uno general en GestionEntidad que recorra todos los atributos haciendo estas cosas
     static resetearformpersona() {

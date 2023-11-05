@@ -1,5 +1,5 @@
 
-pruebasunitarias_MatteoGuiottoSanchez=
+var pruebasunitarias=
 Array(
     Array(1,'id_programa',1,'',false),
     Array(1,'id_programa',2,'12345',true),

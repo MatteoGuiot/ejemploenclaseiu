@@ -43,7 +43,7 @@ class Gestion_programa extends GestionEntidad {
 
     document.getElementById('id_tiempo_aplicacion_programa').setAttribute('onblur', 'Gestion_programa.comprobar_tiempo_aplicacion_programa()');
 
-    document.getElementById('id_descrip_interp_programa').setAttribute('onblur', 'Gestion_programa.comprobar_descrip_interp_programa()');
+    //document.getElementById('id_descrip_interp_programa').setAttribute('onblur', 'Gestion_programa.comprobar_descrip_interp_programa()');
 
     document.getElementById('id_fichero_programa').setAttribute('onblur', 'Gestion_programa.comprobar_fichero_programa()');
 
@@ -126,8 +126,8 @@ class Gestion_programa extends GestionEntidad {
     document.getElementById('id_tiempo_aplicacion_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_tiempo_aplicacion_programa()');
     document.getElementById('id_tiempo_aplicacion_programa').value = tiempo_aplicacion_programa;
 
-    document.getElementById('id_descrip_interp_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_descrip_interp_programa()');
-    document.getElementById('id_descrip_interp_programa').value = descrip_interp_programa;
+    //document.getElementById('id_descrip_interp_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_descrip_interp_programa()');
+    //document.getElementById('id_descrip_interp_programa').value = descrip_interp_programa;
 
     document.getElementById('id_fichero_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_fichero_programa()');
     document.getElementById('id_fichero_programa').value = fichero_programa;
@@ -219,8 +219,8 @@ class Gestion_programa extends GestionEntidad {
     document.getElementById('id_tiempo_aplicacion_programa').value = tiempo_aplicacion_programa;
     document.getElementById('id_tiempo_aplicacion_programa').setAttribute("readonly", "");
 
-    document.getElementById('id_descrip_interp_programa').value = descrip_interp_programa;
-    document.getElementById('id_descrip_interp_programa').setAttribute("readonly", "");
+    //document.getElementById('id_descrip_interp_programa').value = descrip_interp_programa;
+    //document.getElementById('id_descrip_interp_programa').setAttribute("readonly", "");
 
     document.getElementById('id_fichero_programa').value = fichero_programa;
     document.getElementById('id_fichero_programa').setAttribute("readonly", "");
@@ -326,7 +326,7 @@ class Gestion_programa extends GestionEntidad {
 
     document.getElementById('id_tiempo_aplicacion_programa').setAttribute('onblur', 'Gestion_programa.comprobar_tiempo_aplicacion_programa_SEARCH()');
 
-    document.getElementById('id_descrip_interp_programa').setAttribute('onblur', 'Gestion_programa.comprobar_descrip_interp_programa_SEARCH()');
+    //document.getElementById('id_descrip_interp_programa').setAttribute('onblur', 'Gestion_programa.comprobar_descrip_interp_programa_SEARCH()');
 
     document.getElementById('id_fichero_programa').setAttribute('onblur', 'Gestion_programa.comprobar_fichero_programa_SEARCH()');
 
@@ -466,90 +466,796 @@ class Gestion_programa extends GestionEntidad {
   }
 
   static comprobar_id_programa() {
-    return true
+    
+    if(validacionesatomicas.digitos('id_id_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_id_persona', 'KO_formato_id_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_minimo('id_id_programa',1)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_id_programa', 'KO_id_programa_tam_min');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_id_programa', 6)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_id_programa', 'KO_id_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_id_programa');
+    return true;
   }
 
   static comprobar_nombre_programa() {
-    return true
+    
+    if(validacionesatomicas.alfabeticoAcentosÑyEspacios('id_nombre_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_nombre_programa', 'KO_formato_nombre_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_minimo('id_nombre_programa',6)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_nombre_programa', 'KO_nombre_programa_tam_min');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_nombre_programa', 60)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_nombre_programa', 'KO_nombre_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_nombre_programa');
+    return true;
   }
 
   static comprobar_acronimo_programa() {
-    return true
+    
+    if(validacionesatomicas.soloAlfabetico('id_acronimo_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_acronimo_programa', 'KO_formato_acronimo_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_minimo('id_acronimo_programa',3)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_acronimo_programa', 'KO_acronimo_programa_tam_min');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_acronimo_programa', 20)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_acronimo_programa', 'KO_acronimo_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_acronimo_programa');
+    return true;
   }
 
   static comprobar_nombre_original_programa() {
-    return true
+    
+    if(validacionesatomicas.alfabeticoAcentosÑyEspacios('id_nombre_original_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_nombre_original_programa', 'KO_formato_nombre_original_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_minimo('id_nombre_original_programa',6)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_nombre_original_programa', 'KO_nombre_original_programa_tam_min');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_nombre_original_programa', 60)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_nombre_original_programa', 'KO_nombre_original_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_nombre_original_programa');
+    return true;
   }
 
   static comprobar_autor_programa() {
-    return true
+    
+    if(validacionesatomicas.alfabeticoAcentosÑyEspacios('id_autor_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_autor_programa', 'KO_formato_autor_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_minimo('id_autor_programa',6)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_autor_programa', 'KO_autor_programa_tam_min');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_autor_programa', 50)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_autor_programa', 'KO_autor_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_autor_programa');
+    return true;
   }
 
   static comprobar_autor_original_programa() {
-    return true
+    
+    if(validacionesatomicas.alfabeticoAcentosÑyEspacios('id_autor_original_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_autor_original_programa', 'KO_formato_autor_original_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_minimo('id_autor_original_programa',6)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_autor_original_programa', 'KO_autor_original_programa_tam_min');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_autor_original_programa', 50)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_autor_original_programa', 'KO_autor_original_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_autor_original_programa');
+    return true;
   }
 
   static comprobar_ano_programa() {
-    return true
+    
+    if(validacionesatomicas.digitos('id_ano_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_ano_programa', 'KO_formato_ano_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_minimo('id_ano_programa',4)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_ano_programa', 'KO_ano_programa_tam_min');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_ano_programa', 4)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_ano_programa', 'KO_ano_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_ano_programa');
+    return true;
   }
 
   static comprobar_ano_original_programa() {
-    return true
+    
+    if(validacionesatomicas.digitos('id_ano_original_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_ano_original_programa', 'KO_formato_ano_original_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_minimo('id_ano_original_programa',4)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_ano_original_programa', 'KO_ano_original_programa_tam_min');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_ano_original_programa', 4)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_ano_original_programa', 'KO_ano_original_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_ano_original_programa');
+    return true;
   }
 
   static comprobar_requisitos_programa() {
-    return true
+    
+    if(validacionesatomicas.alfabeticoAcentosÑyEspaciosPuntuacion('id_requisitos_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_requisitos_programa', 'KO_formato_requisitos_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_minimo('id_requisitos_programa',6)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_requisitos_programa', 'KO_requisitos_programa_tam_min');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_requisitos_programa', 300)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_requisitos_programa', 'KO_requisitos_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_requisitos_programa');
+    return true;
   }
 
   static comprobar_poblacion_desde_programa() {
-    return true
+    
+    if(validacionesatomicas.digitos('id_poblacion_desde_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_poblacion_desde_programa', 'KO_formato_poblacion_desde_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_minimo('id_poblacion_desde_programa',1)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_poblacion_desde_programa', 'KO_poblacion_desde_programa_tam_min');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_poblacion_desde_programa', 2)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_poblacion_desde_programa', 'KO_poblacion_desde_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_poblacion_desde_programa');
+    return true;
   }
 
   static comprobar_poblacion_hasta_programa() {
-    return true
+    
+    if(validacionesatomicas.digitos('id_poblacion_hasta_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_poblacion_hasta_programa', 'KO_formato_poblacion_hasta_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_minimo('id_poblacion_hasta_programa',1)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_poblacion_hasta_programa', 'KO_poblacion_hasta_programa_tam_min');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_poblacion_hasta_programa', 2)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_poblacion_hasta_programa', 'KO_poblacion_hasta_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_poblacion_hasta_programa');
+    return true;
   }
 
   static comprobar_unidad_poblacion() {
-    return true
+    
+    if(document.getElementById('id_unidad_poblacion').value == ""){
+      DOM_class.mostrardivmensajeserrordebajo("id_unidad_poblacion", 'KO_formato_unidad_poblacion');
+      return false;
+    }
+    else{
+      DOM_class.mostrarexitovalor('id_unidad_poblacion');
+      return true;
+    }
   }
 
   static comprobar_tipo_programa() {
-    return true
+    
+    if(document.getElementById('id_tipo_programa').value == ""){
+      DOM_class.mostrardivmensajeserrordebajo("id_tipo_programa", 'KO_formato_tipo_programa');
+      return false;
+    }
+    else{
+      DOM_class.mostrarexitovalor('id_tipo_programa');
+      return true;
+    }
   }
 
   static comprobar_tiempo_aplicacion_programa() {
-    return true
+    
+    if(validacionesatomicas.digitos('id_tiempo_aplicacion_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_tiempo_aplicacion_programa', 'KO_formato_tiempo_aplicacion_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_minimo('id_tiempo_aplicacion_programa',1)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_tiempo_aplicacion_programa', 'KO_tiempo_aplicacion_programa_tam_min');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_tiempo_aplicacion_programa', 4)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_tiempo_aplicacion_programa', 'KO_tiempo_aplicacion_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_tiempo_aplicacion_programa');
+    return true;
   }
+  
 
   static comprobar_descrip_interp_programa() {
-    return true
+    
+    if(validacionesatomicas.alfabeticoAcentosÑyEspaciosPuntuacionRetornoCarro('id_descrip_interp_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_descrip_interp_programa', 'KO_formato_descrip_interp_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_minimo('id_descrip_interp_programa', 100)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_descrip_interp_programa', 'KO_descrip_interp_programa_tam_min');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_descrip_interp_programa', 5000)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_descrip_interp_programa', 'KO_descrip_interp_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_descrip_interp_programa');
+    return true;
   }
 
   static comprobar_fichero_programa() {
-    return true
+    
+    const tamMax = 2000000;
+    const fichero = document.getElementById('id_fichero_programa').file[0];
+
+    if(fichero){
+      const nombreFichero = fichero.name;
+      const extension = nombreFichero.split('.').pop().toLowercase();
+
+      if(extension ==='pdf' || extension ==='doc' || extension ==='docx'){
+        DOM_class.mostrarexitovalor('id_fichero_programa');
+        return true;
+      }
+      else{
+        DOM_class.mostrardivmensajeserrordebajo('id_fichero_programa', 'KO_fromato_fichero_programa');
+        return false;
+      }  
+    }
   }
 
   static comprobar_enlace_programa() {
-    return true
+    
+    if(validacionesatomicas.soloAlfabeticoYPuntEsp('id_enlace_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_enlace_programa', 'KO_formato_enlace_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_minimo('id_enlace_programa', 10)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_enlace_programa', 'KO_enlace_programa_tam_min');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_enlace_programa', 100)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_enlace_programa', 'KO_enlace_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_enlace_programa');
+    return true;
   }
 
   static comprobar_formato_programa() {
-    return true
+    
+    if(document.getElementById('id_formato_programa').value == ""){
+      DOM_class.mostrardivmensajeserrordebajo("id_formato_programa", 'KO_formato_formato_programa');
+      return false;
+    }
+    else{
+      DOM_class.mostrarexitovalor('id_formato_programa');
+      return true;
+    }
   }
 
   static comprobar_modo_correccion_programa() {
-    return true
+    
+    if(document.getElementById('id_modo_correccion_programa').value == ""){
+      DOM_class.mostrardivmensajeserrordebajo("id_modo_correccion_programa", 'KO_formato_modo_correccion_programa');
+      return false;
+    }
+    else{
+      DOM_class.mostrarexitovalor('id_modo_correccion_programa');
+      return true;
+    }
   }
 
   static comprobar_modo_aplicacion_programa() {
-    return true
+    
+    if(document.getElementById('id_modo_aplicacion_programa').value == ""){
+      DOM_class.mostrardivmensajeserrordebajo("id_modo_aplicacion_programa", 'KO_formato_modo_aplicacion_programa');
+      return false;
+    }
+    else{
+      DOM_class.mostrarexitovalor('id_modo_aplicacion_programa');
+      return true;
+    }
   }
 
   static comprobar_imagen_programa() {
-    return true
+    
+    const tamMax = 20000;
+    const imagen = document.getElementById('id_imagen_programa').file[0];
+
+    if(imagen){
+      const nombreImagen = imagen.name;
+      const extension = nombreImagen.split('.').pop().toLowercase();
+
+      if(extension ==='jpg' || extension ==='jpeg'){
+        DOM_class.mostrarexitovalor('id_imagen_programa');
+        return true;
+      }
+      else{
+        DOM_class.mostrardivmensajeserrordebajo('id_imagen_programa', 'KO_fromato_imagen_programa');
+        return false;
+      }  
+    }
   }
 
 
+  static comprobar_id_programa_SEARCH() {
+    
+    if(validacionesatomicas.digitos('id_id_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_id_persona', 'KO_formato_id_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_id_programa', 6)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_id_programa', 'KO_id_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_id_programa');
+    return true;
+  }
+  
+
+  static comprobar_nombre_programa_SEARCH() {
+    
+    if(validacionesatomicas.alfabeticoAcentosÑyEspacios('id_nombre_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_nombre_programa', 'KO_formato_nombre_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_nombre_programa', 60)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_nombre_programa', 'KO_nombre_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_nombre_programa');
+    return true;
+  }
+  
+
+  static comprobar_acronimo_programa_SEARCH() {
+    
+    if(validacionesatomicas.soloAlfabetico('id_acronimo_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_acronimo_programa', 'KO_formato_acronimo_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_acronimo_programa', 20)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_acronimo_programa', 'KO_acronimo_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_acronimo_programa');
+    return true;
+  }
+
+  static comprobar_nombre_original_programa_SEARCH() {
+    
+    if(validacionesatomicas.alfabeticoAcentosÑyEspacios('id_nombre_original_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_nombre_original_programa', 'KO_formato_nombre_original_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_nombre_original_programa', 60)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_nombre_original_programa', 'KO_nombre_original_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_nombre_original_programa');
+    return true;
+  }
+  
+
+  static comprobar_autor_programa_SEARCH() {
+    
+    if(validacionesatomicas.alfabeticoAcentosÑyEspacios('id_autor_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_autor_programa', 'KO_formato_autor_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_autor_programa', 50)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_autor_programa', 'KO_autor_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_autor_programa');
+    return true;
+  }
+
+  static comprobar_autor_original_programa_SEARCH() {
+    
+    if(validacionesatomicas.alfabeticoAcentosÑyEspacios('id_autor_original_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_autor_original_programa', 'KO_formato_autor_original_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_autor_original_programa', 50)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_autor_original_programa', 'KO_autor_original_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_autor_original_programa');
+    return true;
+  }
+
+  static comprobar_ano_programa_SEARCH() {
+    
+    if(validacionesatomicas.digitos('id_ano_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_ano_programa', 'KO_formato_ano_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_ano_programa', 4)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_ano_programa', 'KO_ano_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_ano_programa');
+    return true;
+  }
+
+  static comprobar_ano_original_programa_SEARCH() {
+    
+    if(validacionesatomicas.digitos('id_ano_original_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_ano_original_programa', 'KO_formato_ano_original_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_ano_original_programa', 4)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_ano_original_programa', 'KO_ano_original_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_ano_original_programa');
+    return true;
+  }
+
+  static comprobar_requisitos_programa_SEARCH() {
+    
+    if(validacionesatomicas.alfabeticoAcentosÑyEspaciosPuntuacion('id_requisitos_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_requisitos_programa', 'KO_formato_requisitos_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_requisitos_programa', 300)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_requisitos_programa', 'KO_requisitos_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_requisitos_programa');
+    return true;
+  }
+
+  static comprobar_poblacion_desde_programa_SEARCH() {
+    
+    if(validacionesatomicas.digitos('id_poblacion_desde_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_poblacion_desde_programa', 'KO_formato_poblacion_desde_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_poblacion_desde_programa', 2)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_poblacion_desde_programa', 'KO_poblacion_desde_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_poblacion_desde_programa');
+    return true;
+  }
+
+  static comprobar_poblacion_hasta_programa_SEARCH() {
+    
+    if(validacionesatomicas.digitos('id_poblacion_hasta_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_poblacion_hasta_programa', 'KO_formato_poblacion_hasta_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_poblacion_hasta_programa', 2)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_poblacion_hasta_programa', 'KO_poblacion_hasta_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_poblacion_hasta_programa');
+    return true;
+  }
+
+  static comprobar_unidad_poblacion_SEARCH() {
+    return true;
+  }
+
+  static comprobar_tipo_programa_SEARCH() {
+    return true;
+  }
+
+  static comprobar_tiempo_aplicacion_programa_SEARCH() {
+    
+    if(validacionesatomicas.digitos('id_tiempo_aplicacion_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_tiempo_aplicacion_programa', 'KO_formato_tiempo_aplicacion_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_tiempo_aplicacion_programa', 4)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_tiempo_aplicacion_programa', 'KO_tiempo_aplicacion_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_tiempo_aplicacion_programa');
+    return true;
+  }
+
+  static comprobar_descrip_interp_programa_SEARCH() {
+    
+    if(validacionesatomicas.alfabeticoAcentosÑyEspaciosPuntuacionRetornoCarro('id_descrip_interp_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_descrip_interp_programa', 'KO_formato_descrip_interp_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_descrip_interp_programa', 5000)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_descrip_interp_programa', 'KO_descrip_interp_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_descrip_interp_programa');
+    return true;
+  }
+
+  static comprobar_fichero_programa_SEARCH() {
+    return true
+  }
+
+  static comprobar_enlace_programa_SEARCH() {
+    
+    if(validacionesatomicas.soloAlfabeticoYPuntEsp('id_enlace_programa')){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_enlace_programa', 'KO_formato_enlace_programa');
+      return false;
+    }
+
+    if(validacionesatomicas.size_maximo('id_enlace_programa', 100)){
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_enlace_programa', 'KO_enlace_programa_tam_max');
+      return false;
+    }
+
+    DOM_class.mostrarexitovalor('id_enlace_programa');
+    return true;
+  }
+
+  static comprobar_formato_programa_SEARCH() {
+    return true;
+  }
+
+  static comprobar_modo_correccion_programa_SEARCH() {
+    return true;
+  }
+
+  static comprobar_modo_aplicacion_programa_SEARCH() {
+    return true;
+  }
+
+  static comprobar_imagen_programa_SEARCH() {
+    return true;
+  }
+//preguntar profesor
 
 
   static async ADD() {
@@ -603,33 +1309,6 @@ class Gestion_programa extends GestionEntidad {
   }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   static recargarform() {
 
     document.getElementById("IU_form").innerHTML = '';
@@ -637,107 +1316,112 @@ class Gestion_programa extends GestionEntidad {
     document.getElementById("IU_form").innerHTML = `
 
     
-      <label for="id_id_programa" class="id_id_programa"></label>
+      <label for="id_id_programa" class="label_id_programa"></label>
       <input type="text" id="id_id_programa" name="id_programa" placeholder="">
       <div id="div_error_id_programa" class="errocampo"><a id="error_id_programa"></a></div>
 
-      <label for="id_nombre_programa" class="id_nombre_programa"></label>
+      <label for="id_nombre_programa" class="label_nombre_programa"></label>
       <input type="text" id="id_nombre_programa" name="nombre_programa" placeholder="">
       <div id="div_error_nombre_programa" class="errocampo"><a id="error_nombre_programa"></a></div>
 
-      <label for="id_acronimo_programa" calss="id_acronimo_programa"></label>
+      <label for="id_acronimo_programa" class="label_acronimo_programa"></label>
       <input type="text" id="id_acronimo_programa" name="acronimo_programa" placeholder="">
       <div id="div_error_acronimo_programa" class="errocampo"><a id="error_acronimo_programa"></a></div>
 
-      <label for="id_nombre_original_programa" class="id_nombre_original_programa"></label>
+      <label for="id_nombre_original_programa" class="label_nombre_original_programa"></label>
       <input type="text" id="id_nombre_original_programa" name="nombre_original_programa" placeholder="">
       <div id="div_error_nombre_original_programa" class="errocampo"><a id="error_nombre_original_programa"></a></div>
 
-      <label for="id_autor_programa" class="id_autor_programa"></label>
+      <label for="id_autor_programa" class="label_autor_programa"></label>
       <input type="text" id="id_autor_programa" name="autor_programa" placeholder="">
       <div id="div_error_autor_programa" class="errocampo"><a id="error_autor_programa"></a></div>
 
-      <label for="id_autor_original_programa" class="id_autor_original_programa"></label>
+      <label for="id_autor_original_programa" class="label_autor_original_programa"></label>
       <input type="text" id="id_autor_original_programa" name="autor_original_programa" placeholder="">
       <div id="div_error_autor_original_programa" class="errocampo"><a id="error_autor_original_programa"></a></div>
 
-      <label for="id_ano_programa" class="id_ano_programa"></label>
+      <label for="id_ano_programa" class="label_ano_programa"></label>
       <input type="text" id="id_ano_programa" name="ano_programa" placeholder="dd/mm/aaaa">
       <div id="div_error_ano_programa" class="errocampo"><a id="error_ano_programa"></a></div>
 
-      <label for="id_ano_original_programa" class="id_ano_original_programa"></label>
+      <label for="id_ano_original_programa" class="label_ano_original_programa"></label>
       <input type="text" id="id_ano_original_programa" name="ano_original_programa" placeholder="">
       <div id="div_error_ano_original_programa" class="errocampo"><a id="error_ano_original_programa"></a></div>
 
-      <label for="id_requisitos_programa" class="id_requisitos_programa"></label>
+      <label for="id_requisitos_programa" class="label_requisitos_programa"></label>
       <input type="text" id="id_requisitos_programa" name="requisitos_programa" placeholder="">
       <div id="div_error_requisitos_programa" class="errocampo"><a id="error_requisitos_programa"></a></div>
 
-      <label for="id_poblacion_desde_programa" class="id_poblacion_desde_programa"></label>
+      <label for="id_poblacion_desde_programa" class="label_poblacion_desde_programa"></label>
       <input type="text" id="id_poblacion_desde_programa" name="poblacion_desde_programa" placholder="">
       <div id="div_error_poblacion_desde_programa" class="errocampo"><a id="error_poblacion_desde_programa"></a></div>
 
-      <label for="id_poblacion_hasta_programa" class="id_poblacion_hasta_programa"></label>
+      <label for="id_poblacion_hasta_programa" class="label_poblacion_hasta_programa"></label>
       <input type="text" id="id_poblacion_hasta_programa" name="poblacion_hasta_programa" placeholder="">
       <div id="div_error_poblacion_hasta_programa" class="errocampo"><a id="error_poblacion_hasta_programa"></a></div>
 
-      <label for="id_unidad_poblacion" class="id_unidad_poblacion"></label>
+      <label for="id_unidad_poblacion" class="label_unidad_poblacion"></label>
       <select id="id_unidad_poblacion" name="unidad_poblacion">
-        <option>MESES</option>
-        <option>AÑOS</option>
+        <option value="" selected> seleccione una opcion</option>
+        <option value="MESES">MESES</option>
+        <option value="ANOS">AÑOS</option>
       </select>
       <div id="div_error_unidad_poblacion" class="errocampo"><a id="error_unidad_poblacion"></a></div>
       
-      <label for="id_tipo_programa" class="id_tipo_programa"></label>
+      <label for="id_tipo_programa" class="label_tipo_programa"></label>
       <select id="id_tipo_programa" name="tipo_programa">
-        <option>EVALUACION</option>
-        <option>INTERVENCION</option>
-        <option>EVALUACION E INTERVENCION</option>
+        <option value="" selected> seleccione una opcion</option>
+        <option value="EVALUACION">EVALUACION</option>
+        <option value="INTERVENCION">INTERVENCION</option>
+        <option value="EVALUACION E INTERVENCION">EVALUACION E INTERVENCION</option>
       </select>
       <div id="div_error_tipo_programa" class="errocampo"><a id="error_tipo_programa"></a></div>
       
-      <label for="id_tiempo_aplicacion_programa" class="id_tiempo_aplicacion_programa"></label>
+      <label for="id_tiempo_aplicacion_programa" class="label_tiempo_aplicacion_programa"></label>
       <input type="text" id="id_tiempo_aplicacion_programa" name="tiempo_aplicacion_programa" placeholder="">
       <div id="div_error_tiempo_aplicacion_programa" class="errocampo"><a id="error_tiempo_aplicacion_programa></a></div>
       
-      <label for="id_descrip_interp_programa" class="id_descrip_interp_programa"></labal>
+      <label for="id_descrip_interp_programa" class="label_descrip_interp_programa"></labal>
       <input type="text" id="id_descrip_interp_programa" name="descrip_interp_programa" placeholder="">
       <div id="div_error_descrip_interp_programa" class="errocampo"><a id="error_descrip_interp_programa"></a></div>
 
-      <label for="id_fichero_programa" class="id_fichero_programa"></label>
+      <label for="id_fichero_programa" class="label_fichero_programa"></label>
       <input type="file" id="id_fichero_programa" name="fichero_programa">
       <div id="div_error_fichero_programa" class="errocampo"><a id="error_fichero_programa"></a></div>
 
-      <label for="id_enlace_programa" class="id_enlace_programa"></label>
+      <label for="id_enlace_programa" class="label_enlace_programa"></label>
       <input type="text" id="id_enlace_programa" name="enlace_programa" placeholder="">
       <div id="div_error_enlace_programa" class="errocampo"><a id="error_enlace_programa"></a></div>
 
-      <label for="id_formato_programa" class="id_formato_programa"></label>
+      <label for="id_formato_programa" class="label_formato_programa"></label>
       <select id="id_formato_programa" name="formato_programa">
-        <option>PAPEL</option>
-        <option>ELECTRONICO</option>
-        <option>PAPEL Y ELECTRONICO</option>
+        <option value="" selected> seleccione una opcion</option>
+        <option value="PAPEL">PAPEL</option>
+        <option value="ELECTRONICO">ELECTRONICO</option>
+        <option value="PAPEL Y ELECTRONICO">PAPEL Y ELECTRONICO</option>
       </select>
       <div id="div_error_formato_programa" class="errocampo"><a id="error_formato_programa"></a></div>
 
-      <label for="id_modo_correccion_programa" class="id_modo_correccion_programa"></label>
+      <label for="id_modo_correccion_programa" class="label_modo_correccion_programa"></label>
       <select id="id_modo_correccion_programa" name="modo_correccion_programa">
-        <option>PAPEL</option>
-        <option>ELECTRONICO</option>
-        <option>PAPEL Y ELECTRONICO</option>
+        <option value="" selected> seleccione una opcion</option>
+        <option value="PAPEL">PAPEL</option>
+        <option value="ELECTRONICO">ELECTRONICO</option>
+        <option value="PAPEL Y ELECTRONICO">PAPEL Y ELECTRONICO</option>
       </select>
       <div id="div_error_modo_correccion_programa" class="errocampo"><a id="error_modo_correccion_programa"></a></div>
 
-      <label for="id_modo_aplicacion_programa" class="id_modo_aplicacion_programa"></label>
+      <label for="id_modo_aplicacion_programa" class="label_modo_aplicacion_programa"></label>
       <select id="id_modo_aplicacion_programa" name="modo_aplicacion_programa">
-        <option>INDIVIDUAL</option>
-        <option>COLECTIVO</option>
-        <option>INDIVIDUAL Y COLECTIVO</option>
+        <option value="" selected> seleccione una opcion</option>
+        <option value="INDIVIDUAL">INDIVIDUAL</option>
+        <option value="COLECTIVO">COLECTIVO</option>
+        <option value="INDIVIDUAL Y COLECTIVO">INDIVIDUAL Y COLECTIVO</option>
       </select>
       <div id="div_error_modo_correccion_programa" class="errocampo"><a id="error_modo_correccion_programa"></a></div>
 
-      <label for="id_imagen_programa" class="id_imagen_programa"></label>
-      <input type="image" id="id_imagen_programa" name="imagen_programa">
+      <label for="id_imagen_programa" class="label_imagen_programa"></label>
+      <input type="file" id="id_imagen_programa" name="imagen_programa">
       <div id="div_error_modo_aplicacion_programa" class="errocampo"><a id="error_modo_aplicacion_programa"></a></div>
         
         `;
