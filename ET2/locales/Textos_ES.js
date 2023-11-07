@@ -42,7 +42,6 @@ let textos_ES={
     'titulo_pagina_personas':'Gestión de Personas',
 
     // titulos formularios acciones
-
     "titulo_form_ADD_persona":"Incorporar una persona",
     "titulo_form_EDIT_persona":"Modicar persona",
     "titulo_form_DELETE_persona":"Confirmar borrar una persona",

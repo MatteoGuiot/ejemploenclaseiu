@@ -15,47 +15,47 @@ class Gestion_programa extends GestionEntidad {
     document.getElementById('IU_form').action = 'javascript:Gestion_programa.ADD();';
     document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_programa.comprobar_submit();');
 
-    document.getElementById('id_id_programa').setAttribute('onblur', 'Gestion_programa.comprobar_id_programa()');
+    document.getElementById('id_id_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_id_programa()');
 
-    document.getElementById('id_nombre_programa').setAttribute('onblur', 'Gestion_programa.comprobar_nombre_programa()');
+    document.getElementById('id_nombre_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_nombre_programa()');
 
-    document.getElementById('id_acronimo_programa').setAttribute('onblur', 'Gestion_programa.comprobar_acronimo_programa()');
+    document.getElementById('id_acronimo_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_acronimo_programa()');
 
-    document.getElementById('id_nombre_original_programa').setAttribute('onblur', 'Gestion_programa.comprobar_nombre_original_programa()');
+    document.getElementById('id_nombre_original_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_nombre_original_programa()');
 
-    document.getElementById('id_autor_programa').setAttribute('onblur', 'Gestion_programa.comprobar_autor_programa()');
+    document.getElementById('id_autor_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_autor_programa()');
 
-    document.getElementById('id_autor_original_programa').setAttribute('onblur', 'Gestion_programa.comprobar_autor_original_programa()');
+    document.getElementById('id_autor_original_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_autor_original_programa()');
 
-    document.getElementById('id_ano_programa').setAttribute('onblur', 'Gestion_programa.comprobar_ano_programa()');
+    document.getElementById('id_ano_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_ano_programa()');
 
-    document.getElementById('id_ano_original_programa').setAttribute('onblur', 'Gestion_programa.comprobar_ano_original_programa()');
+    document.getElementById('id_ano_original_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_ano_original_programa()');
 
-    document.getElementById('id_requisitos_programa').setAttribute('onblur', 'Gestion_programa.comprobar_requisitos_programa()');
+    document.getElementById('id_requisitos_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_requisitos_programa()');
 
-    document.getElementById('id_poblacion_desde_programa').setAttribute('onblur', 'Gestion_programa.comprobar_id_poblacion_desde_programa()');
+    document.getElementById('id_poblacion_desde_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_id_poblacion_desde_programa()');
 
-    document.getElementById('id_poblacion_hasta_programa').setAttribute('onblur', 'Gestion_programa.comprobar_poblacion_hasta_programa()');
+    document.getElementById('id_poblacion_hasta_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_poblacion_hasta_programa()');
 
-    document.getElementById('id_unidad_poblacion').setAttribute('onblur', 'Gestion_programa.comprobar_unidad_poblacion()');
+    document.getElementById('id_unidad_poblacion').setAttribute('onblur', 'return Gestion_programa.comprobar_unidad_poblacion()');
 
-    document.getElementById('id_tipo_programa').setAttribute('onblur', 'Gestion_programa.comprobar_tipo_programa()');
+    document.getElementById('id_tipo_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_tipo_programa()');
 
-    document.getElementById('id_tiempo_aplicacion_programa').setAttribute('onblur', 'Gestion_programa.comprobar_tiempo_aplicacion_programa()');
+    document.getElementById('id_tiempo_aplicacion_programa').setAttribute('onblur',  'return Gestion_programa.comprobar_tiempo_aplicacion_programa()');
 
-    //document.getElementById('id_descrip_interp_programa').setAttribute('onblur', 'Gestion_programa.comprobar_descrip_interp_programa()');
+    //document.getElementById('id_descrip_interp_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_descrip_interp_programa()');
 
-    document.getElementById('id_fichero_programa').setAttribute('onblur', 'Gestion_programa.comprobar_fichero_programa()');
+    //document.getElementById('id_fichero_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_fichero_programa()');
 
-    document.getElementById('id_enlace_programa').setAttribute('onblur', 'rGestion_programa.comprobar_enlace_programa()');
+    document.getElementById('id_enlace_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_enlace_programa()');
 
-    document.getElementById('id_formato_programa').setAttribute('onblur', 'Gestion_programa.comprobar_formato_programa()');
+    document.getElementById('id_formato_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_formato_programa()');
 
-    document.getElementById('id_modo_correccion_programa').setAttribute('onblur', 'Gestion_programa.comprobar_modo_correccion_programa()');
+    document.getElementById('id_modo_correccion_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_modo_correccion_programa()');
 
-    document.getElementById('id_modo_aplicacion_programa').setAttribute('onblur', 'Gestion_programa.comprobar_modo_aplicacion_programa()');
+    document.getElementById('id_modo_aplicacion_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_modo_aplicacion_programa()');
 
-    document.getElementById('id_imagen_programa').setAttribute('onblur', 'Gestion_programa.comprobar_imagen_programa()');
+    //document.getElementById('id_imagen_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_imagen_programa()');
 
 
     let botonadd = document.createElement('button');
@@ -71,7 +71,7 @@ class Gestion_programa extends GestionEntidad {
 
   }
 
-  static createForm_EDIT(id_programa, nombre_programa, acronimo_programa, nombre_original_programa, autor_programa, autor_original_programa, ano_programa,
+  static async createForm_EDIT(id_programa, nombre_programa, acronimo_programa, nombre_original_programa, autor_programa, autor_original_programa, ano_programa,
     ano_original_programa, requisitos_programa, poblacion_desde_programa, poblacion_hasta_programa, unidad_poblacion, tipo_programa,
     tiempo_aplicacion_programa, descrip_interp_programa, fichero_programa, enlace_programa, formato_programa,
     modo_correccion_programa, modo_aplicacion_programa, imagen_programa) {
@@ -129,8 +129,8 @@ class Gestion_programa extends GestionEntidad {
     //document.getElementById('id_descrip_interp_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_descrip_interp_programa()');
     //document.getElementById('id_descrip_interp_programa').value = descrip_interp_programa;
 
-    document.getElementById('id_fichero_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_fichero_programa()');
-    document.getElementById('id_fichero_programa').value = fichero_programa;
+    //document.getElementById('id_fichero_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_fichero_programa()');
+    //document.getElementById('id_fichero_programa').value = fichero_programa;
 
     document.getElementById('id_enlace_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_enlace_programa()');
     document.getElementById('id_enlace_programa').value = enlace_programa;
@@ -144,8 +144,8 @@ class Gestion_programa extends GestionEntidad {
     document.getElementById('id_modo_aplicacion_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_modo_aplicacion_programa()');
     document.getElementById('id_modo_aplicacion_programa').value = modo_aplicacion_programa;
 
-    document.getElementById('id_imagen_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_imagen_programa()');
-    document.getElementById('id_imagen_programa').value = imagen_programa;
+    //document.getElementById('id_imagen_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_imagen_programa()');
+    //document.getElementById('id_imagen_programa').value = imagen_programa;
 
     let botonedit = document.createElement('button');
     botonedit.type = 'submit';
@@ -162,7 +162,7 @@ class Gestion_programa extends GestionEntidad {
   }
 
 
-  static createForm_DELETE(id_programa, nombre_programa, acronimo_programa, nombre_original_programa, autor_programa, autor_original_programa, ano_programa,
+  static async createForm_DELETE(id_programa, nombre_programa, acronimo_programa, nombre_original_programa, autor_programa, autor_original_programa, ano_programa,
     ano_original_programa, requisitos_programa, poblacion_desde_programa, poblacion_hasta_programa, unidad_poblacion, tipo_programa,
     tiempo_aplicacion_programa, descrip_interp_programa, fichero_programa, enlace_programa, formato_programa,
     modo_correccion_programa, modo_aplicacion_programa, imagen_programa) {
@@ -222,8 +222,8 @@ class Gestion_programa extends GestionEntidad {
     //document.getElementById('id_descrip_interp_programa').value = descrip_interp_programa;
     //document.getElementById('id_descrip_interp_programa').setAttribute("readonly", "");
 
-    document.getElementById('id_fichero_programa').value = fichero_programa;
-    document.getElementById('id_fichero_programa').setAttribute("readonly", "");
+    //document.getElementById('id_fichero_programa').value = fichero_programa;
+    //document.getElementById('id_fichero_programa').setAttribute("readonly", "");
 
     document.getElementById('id_enlace_programa').value = enlace_programa;
     document.getElementById('id_enlace_programa').setAttribute("readonly", "");
@@ -237,8 +237,8 @@ class Gestion_programa extends GestionEntidad {
     document.getElementById('id_modo_aplicacion_programa').value = modo_aplicacion_programa;
     document.getElementById('id_modo_aplicacion_programa').setAttribute("readonly", "");
 
-    document.getElementById('id_imagen_programa').value = imagen_programa;
-    document.getElementById('id_imagen_programa').setAttribute("readonly", "");
+    //document.getElementById('id_imagen_programa').value = imagen_programa;
+    //document.getElementById('id_imagen_programa').setAttribute("readonly", "");
 
 
 
@@ -257,7 +257,7 @@ class Gestion_programa extends GestionEntidad {
     document.getElementById('div_IU_form').style.display = 'block';
   }
 
-  static createForm_SHOWCURRENT(id_programa, nombre_programa, acronimo_programa, nombre_original_programa, autor_programa, autor_original_programa, ano_programa,
+  static async createForm_SHOWCURRENT(id_programa, nombre_programa, acronimo_programa, nombre_original_programa, autor_programa, autor_original_programa, ano_programa,
     ano_original_programa, requisitos_programa, poblacion_desde_programa, poblacion_hasta_programa, unidad_poblacion, tipo_programa,
     tiempo_aplicacion_programa, descrip_interp_programa, fichero_programa, enlace_programa, formato_programa,
     modo_correccion_programa, modo_aplicacion_programa, imagen_programa) {
@@ -285,7 +285,7 @@ class Gestion_programa extends GestionEntidad {
 
   }
 
-  static createForm_SEARCH() {
+  static async createForm_SEARCH() {
 
     // resetear el formulario
     this.recargarform();
@@ -298,47 +298,47 @@ class Gestion_programa extends GestionEntidad {
     document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_programa.comprobar_submit_SEARCH();');
 
     // se coloca el onblur del nombre y se pone a vacio el valor (o podriamos hacerlo en el resetear formusuario
-    document.getElementById('id_id_programa').setAttribute('onblur', 'Gestion_programa.comprobar_id_programa_SEARCH()');
+    document.getElementById('id_id_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_id_programa_SEARCH()');
 
-    document.getElementById('id_nombre_programa').setAttribute('onblur', 'Gestion_programa.comprobar_nombre_programa_SEARCH()');
+    document.getElementById('id_nombre_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_nombre_programa_SEARCH()');
 
-    document.getElementById('id_acronimo_programa').setAttribute('onblur', 'Gestion_programa.comprobar_acronimo_programa_SEARCH()');
+    document.getElementById('id_acronimo_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_acronimo_programa_SEARCH()');
 
-    document.getElementById('id_nombre_original_programa').setAttribute('onchange', 'Gestion_programa.comprobar_nombre_original_programa_SEARCH()');
+    document.getElementById('id_nombre_original_programa').setAttribute('onchange', 'return Gestion_programa.comprobar_nombre_original_programa_SEARCH()');
 
-    document.getElementById('id_autor_programa').setAttribute('onblur', 'Gestion_programa.comprobar_autor_programa_SEARCH()');
+    document.getElementById('id_autor_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_autor_programa_SEARCH()');
 
-    document.getElementById('id_autor_original_programa').setAttribute('onblur', 'Gestion_programa.comprobar_autor_original_programa_SEARCH()');
+    document.getElementById('id_autor_original_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_autor_original_programa_SEARCH()');
 
-    document.getElementById('id_ano_programa').setAttribute('onblur', 'Gestion_programa.comprobar_ano_programa_SEARCH()');
+    document.getElementById('id_ano_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_ano_programa_SEARCH()');
 
-    document.getElementById('id_ano_original_programa').setAttribute('onblur', 'Gestion_programa.comprobar_ano_original_programa_SEARCH()');
+    document.getElementById('id_ano_original_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_ano_original_programa_SEARCH()');
 
-    document.getElementById('id_requisitos_programa').setAttribute('onblur', 'Gestion_programa.comprobar_requisitos_programa_SEARCH()');
+    document.getElementById('id_requisitos_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_requisitos_programa_SEARCH()');
 
-    document.getElementById('id_poblacion_desde_programa').setAttribute('onblur', 'Gestion_programa.comprobar_poblacion_desde_programa_SEARCH()');
+    document.getElementById('id_poblacion_desde_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_poblacion_desde_programa_SEARCH()');
 
-    document.getElementById('id_poblacion_hasta_programa').setAttribute('onblur', 'Gestion_programa.comprobar_poblacion_hasta_programa_SEARCH()');
+    document.getElementById('id_poblacion_hasta_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_poblacion_hasta_programa_SEARCH()');
 
-    document.getElementById('id_unidad_poblacion').setAttribute('onblur', 'Gestion_programa.comprobar_unidad_poblacion_SEARCH()');
+    document.getElementById('id_unidad_poblacion').setAttribute('onblur', 'return Gestion_programa.comprobar_unidad_poblacion_SEARCH()');
 
-    document.getElementById('id_tipo_programa').setAttribute('onblur', 'Gestion_programa.comprobar_tipo_programa_SEARCH()');
+    document.getElementById('id_tipo_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_tipo_programa_SEARCH()');
 
-    document.getElementById('id_tiempo_aplicacion_programa').setAttribute('onblur', 'Gestion_programa.comprobar_tiempo_aplicacion_programa_SEARCH()');
+    document.getElementById('id_tiempo_aplicacion_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_tiempo_aplicacion_programa_SEARCH()');
 
-    //document.getElementById('id_descrip_interp_programa').setAttribute('onblur', 'Gestion_programa.comprobar_descrip_interp_programa_SEARCH()');
+    //document.getElementById('id_descrip_interp_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_descrip_interp_programa_SEARCH()');
 
-    document.getElementById('id_fichero_programa').setAttribute('onblur', 'Gestion_programa.comprobar_fichero_programa_SEARCH()');
+    //document.getElementById('id_fichero_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_fichero_programa_SEARCH()');
 
-    document.getElementById('id_enlace_programa').setAttribute('onblur', 'Gestion_programa.comprobar_enlace_programa_SEARCH()');
+    document.getElementById('id_enlace_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_enlace_programa_SEARCH()');
 
-    document.getElementById('id_formato_programa').setAttribute('onblur', 'Gestion_programa.comprobar_formato_programa_SEARCH()');
+    document.getElementById('id_formato_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_formato_programa_SEARCH()');
 
-    document.getElementById('id_modo_correccion_programa').setAttribute('onblur', 'Gestion_programa.comprobar_modo_correccion_programa_SEARCH()');
+    document.getElementById('id_modo_correccion_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_modo_correccion_programa_SEARCH()');
 
-    document.getElementById('id_modo_aplicacion_programa').setAttribute('onblur', 'Gestion_programa.comprobar_modo_aplicacion_programa_SEARCH()');
+    document.getElementById('id_modo_aplicacion_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_modo_aplicacion_programa_SEARCH()');
 
-    document.getElementById('id_imagen_programa').setAttribute('onblur', 'Gestion_programa.comprobar_imagen_programa_SEARCH()');
+    //document.getElementById('id_imagen_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_imagen_programa_SEARCH()');
 
 
     let botonsearch = document.createElement('button');
@@ -846,7 +846,7 @@ class Gestion_programa extends GestionEntidad {
     const tamMax = 2000000;
     const fichero = document.getElementById('id_fichero_programa').file[0];
 
-    if(fichero){
+    if(fichero.size <= tamMax){
       const nombreFichero = fichero.name;
       const extension = nombreFichero.split('.').pop().toLowercase();
 
@@ -858,6 +858,10 @@ class Gestion_programa extends GestionEntidad {
         DOM_class.mostrardivmensajeserrordebajo('id_fichero_programa', 'KO_fromato_fichero_programa');
         return false;
       }  
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_fichero_programa', 'KO_fichero_programa_tam_max');
+      return false;
     }
   }
 
@@ -929,7 +933,7 @@ class Gestion_programa extends GestionEntidad {
     const tamMax = 20000;
     const imagen = document.getElementById('id_imagen_programa').file[0];
 
-    if(imagen){
+    if(imagen.size <= tamMax){
       const nombreImagen = imagen.name;
       const extension = nombreImagen.split('.').pop().toLowercase();
 
@@ -941,6 +945,10 @@ class Gestion_programa extends GestionEntidad {
         DOM_class.mostrardivmensajeserrordebajo('id_imagen_programa', 'KO_fromato_imagen_programa');
         return false;
       }  
+    }
+    else{
+      DOM_class.mostrardivmensajeserrordebajo('id_imagen_programa', 'KO_imagen_programa_tam_max');
+      return false;
     }
   }
 
