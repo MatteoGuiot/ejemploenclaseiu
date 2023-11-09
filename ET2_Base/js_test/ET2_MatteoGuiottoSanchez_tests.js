@@ -98,7 +98,7 @@ Array(
     Array('programa','imagen_programa', 5, 'tamaño de la imagen es mas grande que 20000 bytes', false, 'El tamaño de la imagen es mas grande que 20000 bytes'),
     Array('programa','imagen_programa', 6, 'tamaño mayor o igual que 7 && tamaño menor o igual que 60 && Alfabetico sin acentos ni ñ ni espacios && formato igual a jpg o jpeg && tamaño igual o menor a 20000 bytes', true, 'Exito'),
 
-    //publ'programa',icacion
+    //publicacion
     Array('publicacion','id_publicacion', 1, 'tamaño menor que 1', false, 'El id de publicacoin debe tener como minimo un carater'),
     Array('publicacion','id_publicacion', 2, 'tamaño mayor que 6', false, 'El id de publicacion debe tener como maximo seis caracteres'),
     Array('publicacion','id_publicacion', 3, 'Algun caracter != digito', false, 'El id de publicacion solo puede contener digitos'),
