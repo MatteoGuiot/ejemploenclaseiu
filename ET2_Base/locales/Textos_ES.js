@@ -173,6 +173,8 @@ let textos_ES={
 
 
 
-    //
+    //mensajes error publicacion
+
+    
 };
 

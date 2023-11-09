@@ -7,7 +7,6 @@ class Gestion_programa extends GestionEntidad {
 
   static async createForm_ADD() {
 
-
     this.recargarform();
 
     document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_ADD_programa";
