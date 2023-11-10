@@ -44,10 +44,11 @@ class Gestion_programa extends GestionEntidad {
 
     document.getElementById('descrip_interp_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_descrip_interp_programa()');
 
-    document.getElementById('nuevo_fichero_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_nuevo_fichero_programa()');
     document.getElementById('label_fichero_programa').style.display = 'none';
     document.getElementById('fichero_programa').style.display = 'none';
     document.getElementById('link_fichero_programa').style.display= 'none';
+    document.getElementById('nuevo_fichero_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_nuevo_fichero_programa()');
+   
 
     document.getElementById('enlace_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_enlace_programa()');
 
@@ -287,6 +288,11 @@ class Gestion_programa extends GestionEntidad {
 
     // eliminar boton delete del form DELETE
     document.getElementById('botondelete').remove();
+    document.getElementById('label_nueva_imagen_programa').style.display = 'none'
+    document.getElementById('nueva_imagen_programa').style.display = 'none'
+
+    document.getElementById('label_nuevo_fichero_programa').style.display = 'none'
+    document.getElementById('nuevo_fichero_programa').style.display = 'none'
 
     // se rellena el action del formulario
     let imgshowcurrent = document.createElement('img');
@@ -394,12 +400,12 @@ class Gestion_programa extends GestionEntidad {
     let valor12 = this.comprobar_tipo_programa();
     let valor13 = this.comprobar_tiempo_aplicacion_programa();
     let valor14 = this.comprobar_descrip_interp_programa();
-    let valor15 = this.comprobar_fichero_programa();
+    let valor15 = this.comprobar_nuevo_fichero_programa();
     let valor16 = this.comprobar_enlace_programa();
     let valor17 = this.comprobar_formato_programa();
     let valor18 = this.comprobar_modo_correccion_programa();
     let valor19 = this.comprobar_modo_aplicacion_programa();
-    let valor20 = this.comprobar_imagen_programa();
+    let valor20 = this.comprobar_nueva_imagen_programa();
 
 
     let resultado = (
@@ -865,23 +871,23 @@ class Gestion_programa extends GestionEntidad {
   static comprobar_nuevo_fichero_programa() {
 
     const tamMax = 2000000;
-    const fichero = document.getElementById('fichero_programa').file[0];
+    const fichero = document.getElementById('nuevo_fichero_programa').file[0];
 
     if (fichero.size <= tamMax) {
       const nombreFichero = fichero.name;
       const extension = nombreFichero.split('.').pop().toLowercase();
 
       if (extension === 'pdf' || extension === 'doc' || extension === 'docx') {
-        DOM_class.mostrarexitovalor('fichero_programa');
+        DOM_class.mostrarexitovalor('nuevo_fichero_programa');
         return true;
       }
       else {
-        DOM_class.mostrardivmensajeserrordebajo('fichero_programa', 'KO_fromato_fichero_programa');
+        DOM_class.mostrardivmensajeserrordebajo('nuevo_fichero_programa', 'KO_fromato_fichero_programa');
         return false;
       }
     }
     else {
-      DOM_class.mostrardivmensajeserrordebajo('fichero_programa', 'KO_fichero_programa_tam_max');
+      DOM_class.mostrardivmensajeserrordebajo('nuevo_fichero_programa', 'KO_fichero_programa_tam_max');
       return false;
     }
   }
@@ -952,23 +958,23 @@ class Gestion_programa extends GestionEntidad {
   static comprobar_nueva_imagen_programa() {
 
     const tamMax = 20000;
-    const imagen = document.getElementById('imagen_programa').file[0];
+    const imagen = document.getElementById('nueva_imagen_programa').file[0];
 
     if (imagen.size <= tamMax) {
       const nombreImagen = imagen.name;
       const extension = nombreImagen.split('.').pop().toLowercase();
 
       if (extension === 'jpg' || extension === 'jpeg') {
-        DOM_class.mostrarexitovalor('imagen_programa');
+        DOM_class.mostrarexitovalor('nueva_imagen_programa');
         return true;
       }
       else {
-        DOM_class.mostrardivmensajeserrordebajo('imagen_programa', 'KO_fromato_imagen_programa');
+        DOM_class.mostrardivmensajeserrordebajo('nueva_imagen_programa', 'KO_fromato_imagen_programa');
         return false;
       }
     }
     else {
-      DOM_class.mostrardivmensajeserrordebajo('imagen_programa', 'KO_imagen_programa_tam_max');
+      DOM_class.mostrardivmensajeserrordebajo('nueva_imagen_programa', 'KO_imagen_programa_tam_max');
       return false;
     }
   }
@@ -1304,7 +1310,7 @@ class Gestion_programa extends GestionEntidad {
     await this.peticionBackGeneral('IU_form', 'programa', 'EDIT')
       .then((respuesta) => {
         if (respuesta['ok']) {
-          this.resetearFormPrograma();
+          this.recargarform();
           this.SEARCH();
         }
         else {
@@ -1317,7 +1323,7 @@ class Gestion_programa extends GestionEntidad {
     await this.peticionBackGeneral('IU_form', 'programa', 'DELETE')
       .then((respuesta) => {
         if (respuesta['ok']) {
-          resetearFormPrograma();
+          recargarform();
           this.SEARCH();
         }
         else {
@@ -1329,7 +1335,7 @@ class Gestion_programa extends GestionEntidad {
   static async SEARCH() {
     await this.peticionBackGeneral('IU_form', 'programa', 'SEARCH')
       .then((respuesta) => {
-        this.resetearFormPrograma();
+        this.recargarform();
         let programa = new Gestion_programa('programa', respuesta['resource'], Array('id_programa', 'nombre_programa', 'autor_programa')); programa.mostrartabla();
         if (respuesta['code'] == 'RECORDSET_VACIO') {
           document.getElementById('muestradatostabla').innerHTML = 'no hay datos coincidentes con la busqueda';
@@ -1393,16 +1399,16 @@ class Gestion_programa extends GestionEntidad {
       <select id="unidad_poblacion" name="unidad_poblacion">
         <option value="" selected> seleccione una opcion</option>
         <option value="MESES">MESES</option>
-        <option value="ANOS">AÑOS</option>
+        <option value="AÑOS">AÑOS</option>
       </select>
       <div id="div_error_unidad_poblacion" class="errocampo"><a id="error_unidad_poblacion"></a></div>
       <br>
       <label for="tipo_programa" class="label_tipo_programa"></label>
       <select id="tipo_programa" name="tipo_programa">
         <option value="" selected> seleccione una opcion</option>
-        <option value="EVALUACION">EVALUACION</option>
-        <option value="INTERVENCION">INTERVENCION</option>
-        <option value="EVALUACION E INTERVENCION">EVALUACION E INTERVENCION</option>
+        <option value="EVALUACIÓN">EVALUACIÓN</option>
+        <option value="INTERVENCIÓN">INTERVENCIÓN</option>
+        <option value="EVALUACIÓN E INTERVENCIÓN">EVALUACIÓN E INTERVENCIÓN</option>
       </select>
       <div id="div_error_tipo_programa" class="errocampo"><a id="error_tipo_programa"></a></div>
       <br>
@@ -1413,14 +1419,14 @@ class Gestion_programa extends GestionEntidad {
       <label for="descrip_interp_programa" class="label_descrip_interp_programa"></label>
       <input type="text" id="descrip_interp_programa" name="descrip_interp_programa" placeholder="">
       <div id="div_error_descrip_interp_programa" class="errocampo"><a id="error_descrip_interp_programa"></a></div>
-
+      <br>
       <label id='label_fichero_programa' for="fichero_programa" class="label_fichero_programa"></label>
       <input type="text" id="fichero_programa" name="fichero_programa">
-      <a id="link_fichero_programa" href=""><img src="nombreficheroiconofichero.jpg" /></a> <br>
+      <a id="link_fichero_programa" href=""><img src="./iconos/FILE.png" /></a><br>
       <label id="label_nuevo_fichero_programa" for="nuevo_fichero_programa" class="label_nuevo_fichero_programa"></label>
       <input type="file" id="nuevo_fichero_programa" name="nuevo_fichero_programa">
       <div id="div_error_nuevo_fichero_programa" class="errocampo"><a id="error_nuevo_fichero_programa"></a></div>
-      
+      <br>
       <label for="enlace_programa" class="label_enlace_programa"></label>
       <input type="text" id="enlace_programa" name="enlace_programa" placeholder="">
       <div id="div_error_enlace_programa" class="errocampo"><a id="error_enlace_programa"></a></div>
@@ -1429,8 +1435,8 @@ class Gestion_programa extends GestionEntidad {
       <select id="formato_programa" name="formato_programa">
         <option value="" selected> seleccione una opcion</option>
         <option value="PAPEL">PAPEL</option>
-        <option value="ELECTRONICO">ELECTRONICO</option>
-        <option value="PAPEL Y ELECTRONICO">PAPEL Y ELECTRONICO</option>
+        <option value="ELECTRÓNICO">ELECTRÓNICO</option>
+        <option value="PAPEL Y ELECTRÓNICO">PAPEL Y ELECTRÓNICO</option>
       </select>
       <div id="div_error_formato_programa" class="errocampo"><a id="error_formato_programa"></a></div>
       <br>
@@ -1438,8 +1444,8 @@ class Gestion_programa extends GestionEntidad {
       <select id="modo_correccion_programa" name="modo_correccion_programa">
         <option value="" selected> seleccione una opcion</option>
         <option value="PAPEL">PAPEL</option>
-        <option value="ELECTRONICO">ELECTRONICO</option>
-        <option value="PAPEL Y ELECTRONICO">PAPEL Y ELECTRONICO</option>
+        <option value="ELECTRÓNICO">ELECTRÓNICO</option>
+        <option value="PAPEL Y ELECTRÓNICO">PAPEL Y ELECTRÓNICO</option>
       </select>
       <div id="div_error_modo_correccion_programa" class="errocampo"><a id="error_modo_correccion_programa"></a></div>
       <br>
@@ -1451,10 +1457,10 @@ class Gestion_programa extends GestionEntidad {
         <option value="INDIVIDUAL Y COLECTIVO">INDIVIDUAL Y COLECTIVO</option>
       </select>
       <div id="div_error_modo_correccion_programa" class="errocampo"><a id="error_modo_correccion_programa"></a></div>
-
+      <br>
       <label id="label_imagen_programa" for="imagen_programa" class="label_imagen_programa"></label>
       <input type="text" id="imagen_programa" name="imagen_programa">
-      <a id="link_imagen_programa" href=""><img src="" /></a> <br>
+      <a id="link_imagen_programa" href=""><img src="./iconos/FILE.png" /></a> <br>
       <label id="label_nueva_imagen_programa" for="nueva_imagen_programa" class="label_nueva_imagen_programa"></label>
       <input type="file" id="nueva_imagen_programa" name="nueva_imagen_programa">
       <div id="div_error_modo_aplicacion_programa" class="errocampo"><a id="error_modo_aplicacion_programa"></a></div>

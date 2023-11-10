@@ -13,7 +13,7 @@ class validacionesatomicas{
     }
 
     static size_maximo(id, valormaximo){
-        if (document.getElementById(id).value.length > valormaximo){
+        if (document.getElementById(id).value.length >= valormaximo){
             return false;
         }
         else{
@@ -24,9 +24,14 @@ class validacionesatomicas{
     static soloAlfabetico(id){
         
         const pattern = /^[a-zA-Z]+$/;
-        
-        if(!pattern.test(document.getElementById(id).value)){
-            return false;
+
+        if(document.getElementById(id).value != ''){
+            if(!pattern.test(document.getElementById(id).value)){
+                return false;
+            }
+            else{
+                return true;
+            }
         }
         else{
             return true;
@@ -35,10 +40,15 @@ class validacionesatomicas{
 
     static digitos(id){
         
-        const pattern = /^[1-9]+$/;
+        const pattern = /^[0-9]+$/;
 
-        if(!pattern.test(document.getElementById(id).value)){
-            return false;
+        if(document.getElementById(id).value != ''){
+            if(!pattern.test(document.getElementById(id).value)){
+                return false;
+            }
+            else{
+                return true;
+            }
         }
         else{
             return true;
@@ -49,8 +59,13 @@ class validacionesatomicas{
 
         const pattern = /^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\s]+$/;
         
-        if(!pattern.test(document.getElementById(id).value)){
-            return false;
+        if(document.getElementById(id).value != ''){
+            if(!pattern.test(document.getElementById(id).value)){
+                return false;
+            }
+            else{
+                return true;
+            }
         }
         else{
             return true;
@@ -61,8 +76,13 @@ class validacionesatomicas{
 
         const pattern = /^[a-zA-ZñÑ]+$/;
         
-        if(!pattern.test(document.getElementById(id).value)){
-            return false;
+        if(document.getElementById(id).value != ''){
+            if(!pattern.test(document.getElementById(id).value)){
+                return false;
+            }
+            else{
+                return true;
+            }
         }
         else{
             return true;
@@ -73,8 +93,13 @@ class validacionesatomicas{
 
         const pattern = /^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\s.,;:!?¡¿-]+$/;
         
-        if(!pattern.test(document.getElementById(id).value)){
-            return false;
+        if(document.getElementById(id).value != ''){
+            if(!pattern.test(document.getElementById(id).value)){
+                return false;
+            }
+            else{
+                return true;
+            }
         }
         else{
             return true;
@@ -85,8 +110,13 @@ class validacionesatomicas{
 
         const pattern = /^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\s.,;:!?¡-¿\n\r]+$/;
         
-        if(!pattern.test(document.getElementById(id).value)){
-            return false;
+        if(document.getElementById(id).value != ''){
+            if(!pattern.test(document.getElementById(id).value)){
+                return false;
+            }
+            else{
+                return true;
+            }
         }
         else{
             return true;
@@ -97,8 +127,13 @@ class validacionesatomicas{
         
         const pattern = /^[a-zA-Z:/.]*$/;
         
-        if(!pattern.test(document.getElementById(id).value)){
-            return false;
+        if(document.getElementById(id).value != ''){
+            if(!pattern.test(document.getElementById(id).value)){
+                return false;
+            }
+            else{
+                return true;
+            }
         }
         else{
             return true;

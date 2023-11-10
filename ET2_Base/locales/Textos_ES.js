@@ -68,7 +68,7 @@ let textos_ES={
 
 
     //label's_programa
-    "label_id_programa" : "Introduazca identificacion programa : ",
+    "label_id_programa" : "Introduzca identificacion programa : ",
     "label_nombre_programa" : "Introduzca nombre programa : ",
     "label_acronimo_programa" : "Introduzca acronimo programa : ",
     "label_nombre_original_programa" : "Introduzca nombre original del programa : ",
