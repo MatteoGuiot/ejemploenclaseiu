@@ -54,6 +54,7 @@ let textos_ES={
     "modo_correccion_programa" : "Modo de correccion del programa",
     "modo_aplicacion_programa" : "Modo de aplicacion del programa",
     "imagen_programa" : "Imagen del programa",
+    "nueva_imagen_programa" : "Nueva imagen programa",
 
     //id's_publicacion
 
@@ -87,7 +88,7 @@ let textos_ES={
     "label_formato_programa" : "Introduzca formato del programa : ",
     "label_modo_correccion_programa" : "Introduzca modo de correccion del programa :",
     "label_modo_aplicacion_programa" : "Introduzca modo de aplicacion del programa : ",
-    "label_imagen_programa" : "Introduzca imagen del programa : ",
+    "label_nueva_imagen_programa" : "Introduzca imagen del programa : ",
 
     //label's_publicacion
     "label_id_publicacion" : "Introduzca identificacion publicacion : ",

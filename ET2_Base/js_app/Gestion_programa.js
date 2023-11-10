@@ -45,9 +45,9 @@ class Gestion_programa extends GestionEntidad {
     document.getElementById('descrip_interp_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_descrip_interp_programa()');
 
     document.getElementById('nuevo_fichero_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_nuevo_fichero_programa()');
-    document.getElementById('label_fichero_programa').display = 'none';
-    document.getElementById('fichero_programa').display = 'none';
-    document.getElementById('link_fichero_programa').display= 'none';
+    document.getElementById('label_fichero_programa').style.display = 'none';
+    document.getElementById('fichero_programa').style.display = 'none';
+    document.getElementById('link_fichero_programa').style.display= 'none';
 
     document.getElementById('enlace_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_enlace_programa()');
 
@@ -57,7 +57,10 @@ class Gestion_programa extends GestionEntidad {
 
     document.getElementById('modo_aplicacion_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_modo_aplicacion_programa()');
 
-    //document.getElementById('imagen_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_imagen_programa()');
+    document.getElementById('nueva_imagen_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_nueva_imagen_programa()');
+    document.getElementById('label_imagen_programa').style.display = 'none';
+    document.getElementById('imagen_programa').style.display = 'none';
+    document.getElementById('link_imagen_programa').style.display = 'none';
 
 
     let botonadd = document.createElement('button');
@@ -148,9 +151,13 @@ class Gestion_programa extends GestionEntidad {
 
     document.getElementById('modo_aplicacion_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_modo_aplicacion_programa()');
     document.getElementById('modo_aplicacion_programa').value = modo_aplicacion_programa;
+    
+    document.getElementById('imagen_programa').value = imagen_programa;
+    document.getElementById('link_imagen_programa').setAttribute('href', 'http://193.147.87.202/ET2/filesuploaded/files_xxxx/' + imagen_programa);
+    document.getElementById('imagen_programa').setAttribute("readonly", true);
 
-    //document.getElementById('imagen_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_imagen_programa()');
-    //document.getElementById('imagen_programa').value = imagen_programa;
+    document.getElementById('nueva_imagen_programa').setAttribute('onblur', 'Gestion_programa.comprobar_nueva_imagen_programa()');
+    
 
     let botonedit = document.createElement('button');
     botonedit.type = 'submit';
@@ -243,8 +250,9 @@ class Gestion_programa extends GestionEntidad {
     document.getElementById('modo_aplicacion_programa').value = modo_aplicacion_programa;
     document.getElementById('modo_aplicacion_programa').setAttribute("readonly", "");
 
-    //document.getElementById('imagen_programa').value = imagen_programa;
-    //document.getElementById('imagen_programa').setAttribute("readonly", "");
+    document.getElementById('imagen_programa').value = imagen_programa;
+    document.getElementById('imagen_programa').href += imagen_programa;
+    document.getElementById('imagen_programa').setAttribute("readonly", true);
 
 
 
@@ -348,8 +356,11 @@ class Gestion_programa extends GestionEntidad {
 
     document.getElementById('modo_aplicacion_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_modo_aplicacion_programa_SEARCH()');
 
-    //document.getElementById('imagen_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_imagen_programa_SEARCH()');
+    document.getElementById('imagen_programa').setAttribute('onblur', 'return Gestion_programa.comprobar_imagen_programa_SEARCH()');
 
+    document.getElementById("label_nueva_imagen_programa").style.display = 'none';
+    document.getElementById("nueva_imagen_programa").style.display = 'none';
+    document.getElementById('link_imagen_programa').style.display = 'none';
 
     let botonsearch = document.createElement('button');
     botonsearch.type = 'submit';
@@ -486,7 +497,7 @@ class Gestion_programa extends GestionEntidad {
 
     if (validacionesatomicas.size_minimo('id_programa', 1)) {
     }
-    else {
+    else { 
       DOM_class.mostrardivmensajeserrordebajo('id_programa', 'KO_id_programa_tam_min');
       return false;
     }
@@ -938,7 +949,7 @@ class Gestion_programa extends GestionEntidad {
     }
   }
 
-  static comprobar_imagen_programa() {
+  static comprobar_nueva_imagen_programa() {
 
     const tamMax = 20000;
     const imagen = document.getElementById('imagen_programa').file[0];
@@ -1402,14 +1413,14 @@ class Gestion_programa extends GestionEntidad {
       <label for="descrip_interp_programa" class="label_descrip_interp_programa"></label>
       <input type="text" id="descrip_interp_programa" name="descrip_interp_programa" placeholder="">
       <div id="div_error_descrip_interp_programa" class="errocampo"><a id="error_descrip_interp_programa"></a></div>
-      <br>
+
       <label id='label_fichero_programa' for="fichero_programa" class="label_fichero_programa"></label>
       <input type="text" id="fichero_programa" name="fichero_programa">
       <a id="link_fichero_programa" href=""><img src="nombreficheroiconofichero.jpg" /></a> <br>
       <label id="label_nuevo_fichero_programa" for="nuevo_fichero_programa" class="label_nuevo_fichero_programa"></label>
       <input type="file" id="nuevo_fichero_programa" name="nuevo_fichero_programa">
       <div id="div_error_nuevo_fichero_programa" class="errocampo"><a id="error_nuevo_fichero_programa"></a></div>
-      <br>
+      
       <label for="enlace_programa" class="label_enlace_programa"></label>
       <input type="text" id="enlace_programa" name="enlace_programa" placeholder="">
       <div id="div_error_enlace_programa" class="errocampo"><a id="error_enlace_programa"></a></div>
@@ -1440,11 +1451,17 @@ class Gestion_programa extends GestionEntidad {
         <option value="INDIVIDUAL Y COLECTIVO">INDIVIDUAL Y COLECTIVO</option>
       </select>
       <div id="div_error_modo_correccion_programa" class="errocampo"><a id="error_modo_correccion_programa"></a></div>
-      <label for="imagen_programa" class="label_imagen_programa"></label>
-      <input type="file" id="imagen_programa" name="imagen_programa">
+
+      <label id="label_imagen_programa" for="imagen_programa" class="label_imagen_programa"></label>
+      <input type="text" id="imagen_programa" name="imagen_programa">
+      <a id="link_imagen_programa" href=""><img src="" /></a> <br>
+      <label id="label_nueva_imagen_programa" for="nueva_imagen_programa" class="label_nueva_imagen_programa"></label>
+      <input type="file" id="nueva_imagen_programa" name="nueva_imagen_programa">
       <div id="div_error_modo_aplicacion_programa" class="errocampo"><a id="error_modo_aplicacion_programa"></a></div>
       <br>
-        `;
+   
+      
+      `;
 
     //obtener campos del formulario
     let campos = document.forms['IU_form'].elements;

@@ -23,7 +23,7 @@ class validacionesatomicas{
 
     static soloAlfabetico(id){
         
-        const pattern = /^[a-zA-Z]*$/;
+        const pattern = /^[a-zA-Z]+$/;
         
         if(!pattern.test(document.getElementById(id).value)){
             return false;
@@ -35,7 +35,7 @@ class validacionesatomicas{
 
     static digitos(id){
         
-        const pattern = /^[1-9]*$/;
+        const pattern = /^[1-9]+$/;
 
         if(!pattern.test(document.getElementById(id).value)){
             return false;
