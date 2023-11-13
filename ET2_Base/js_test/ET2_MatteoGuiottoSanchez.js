@@ -1,1 +1,1 @@
-datosgenerales = Array( Array('Guiotto Sanchez Matteo', 'ET2', 18))
+datosgenerales = Array( Array('Guiotto Sanchez Matteo', 'ET2', 24))

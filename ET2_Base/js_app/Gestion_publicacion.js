@@ -16,19 +16,22 @@ class Gestion_publicacion extends GestionEntidad {
         document.getElementById('IU_form').action = 'javascript:Gestion_publicacion.ADD();';
         document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_publicacion.comprobar_submit();');
 
-        document.getElementById('id_id_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_id_publicacion()');
+        document.getElementById('id_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_id_publicacion()');
 
-        //document.getElementById('id_titulo_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_titulo_publicacion()');
+        document.getElementById('titulo_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_titulo_publicacion()');
 
-        document.getElementById('id_autor_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_autor_publicacion()');
+        document.getElementById('autor_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_autor_publicacion()');
 
-        document.getElementById('id_fecha_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_fecha_publicacion()');
+        document.getElementById('fecha_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_fecha_publicacion()');
 
-        document.getElementById('id_area_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_area_publicacion()');
+        document.getElementById('area_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_area_publicacion()');
 
-        document.getElementById('id_texto_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_texto_publicacion()');
+        document.getElementById('texto_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_texto_publicacion()');
 
-        document.getElementById('id_imagen_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_imagen_publicacion()');
+        document.getElementById('nueva_imagen_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_nueva_imagen_publicacion()');
+        document.getElementById('label_imagen_publicacion').style.display = 'none';
+        document.getElementById('imagen_publicacion').style.display = 'none';
+        document.getElementById('link_imagen_publicacion').style.display = 'none';
 
 
         let botonadd = document.createElement('button');
@@ -55,27 +58,30 @@ class Gestion_publicacion extends GestionEntidad {
         document.getElementById('IU_form').action = 'javascript:Gestion_publicacion.EDIT();';
         document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_publicacion.comprobar_submit();');
 
-        document.getElementById('id_id_publicacion').setAttribute('onblur', 'return Gestion_programa.comprobar_id_publicacion()');
-        document.getElementById('id_id_publicacion').value = id_publicacion;
-        document.getElementById('id_id_publicacion').setAttribute("readonly", "");
+        document.getElementById('id_publicacion').setAttribute('onblur', 'return Gestion_programa.comprobar_id_publicacion()');
+        document.getElementById('id_publicacion').value = id_publicacion;
+        document.getElementById('id_publicacion').setAttribute("readonly", "");
 
-        document.getElementById('id_titulo_publicacion').setAttribute('onblur', 'return Gestion_programa.comprobar_titulo_publicacion()');
-        document.getElementById('id_titulo_publicacion').value = titulo_publicacion;
+        document.getElementById('titulo_publicacion').setAttribute('onblur', 'return Gestion_programa.comprobar_titulo_publicacion()');
+        document.getElementById('titulo_publicacion').value = titulo_publicacion;
 
-        document.getElementById('id_autor_publicacion').setAttribute('onblur', 'return Gestion_programa.comprobar_autor_publicacion()');
-        document.getElementById('id_autor_publicacion').value = autor_publicacion;
+        document.getElementById('autor_publicacion').setAttribute('onblur', 'return Gestion_programa.comprobar_autor_publicacion()');
+        document.getElementById('autor_publicacion').value = autor_publicacion;
 
-        document.getElementById('id_fecha_publicacion').setAttribute('onblur', 'return Gestion_programa.comprobar_fecha_publicacion()');
-        document.getElementById('id_fecha_publicacion').value = fecha_publicacion;
+        document.getElementById('fecha_publicacion').setAttribute('onblur', 'return Gestion_programa.comprobar_fecha_publicacion()');
+        document.getElementById('fecha_publicacion').value = fecha_publicacion;
 
-        document.getElementById('id_area_publicacion').setAttribute('onblur', 'return Gestion_programa.comprobar_area_publicacion()');
-        document.getElementById('id_area_publicacion').value = area_publicacion;
+        document.getElementById('area_publicacion').setAttribute('onblur', 'return Gestion_programa.comprobar_area_publicacion()');
+        document.getElementById('area_publicacion').value = area_publicacion;
 
-        document.getElementById('id_texto_publicacion').setAttribute('onblur', 'return Gestion_programa.comprobar_texto_publicacion()');
-        document.getElementById('id_texto_publicacion').value = texto_publicacion;
+        document.getElementById('texto_publicacion').setAttribute('onblur', 'return Gestion_programa.comprobar_texto_publicacion()');
+        document.getElementById('texto_publicacion').value = texto_publicacion;
 
-        document.getElementById('id_imagen_publicacion').setAttribute('onblur', 'return Gestion_programa.comprobar_imagen_publicacion()');
-        document.getElementById('id_imagen_publicacion').value = imagen_publicacion;
+        document.getElementById('imagen_publicacion').value = imagen_publicacion;
+        document.getElementById('link_imagen_publicacion').setAttribute('href', 'http://193.147.87.202/ET2/filesuploaded/files_xxxx/' + imagen_publicacion);
+        document.getElementById('imagen_publicacion').setAttribute("readonly", true);
+
+        document.getElementById('nueva_imagen_publicacion').setAttribute('onblur', 'return Gestion_programa.comprobar_nueva_imagen_publicacion()');
 
         let botonedit = document.createElement('button');
         botonedit.type = 'submit';
@@ -105,26 +111,30 @@ class Gestion_publicacion extends GestionEntidad {
         document.getElementById('IU_form').action = 'javascript:Gestion_publicacion.DELETE();';
 
         // se coloca el onblur del dni y se pone a vacio el valor 
-        document.getElementById('id_id_publicacion').value = id_publicacion;
-        document.getElementById('id_id_publicacion').setAttribute("readonly", "");
+        document.getElementById('id_publicacion').value = id_publicacion;
+        document.getElementById('id_publicacion').setAttribute("readonly", "");
         // se coloca el onblur del nombre y se pone a vacio el valor (o podriamos hacerlo en el resetearformusuario())
-        document.getElementById('id_titulo_publicacion').value = titulo_publicacion;
-        document.getElementById('id_titulo_publicacion').setAttribute("readonly", "");
+        document.getElementById('titulo_publicacion').value = titulo_publicacion;
+        document.getElementById('titulo_publicacion').setAttribute("readonly", "");
 
-        document.getElementById('id_autor_publicacion').value = autor_publicacion;
-        document.getElementById('id_autor_publicacion').setAttribute("readonly", "");
+        document.getElementById('autor_publicacion').value = autor_publicacion;
+        document.getElementById('autor_publicacion').setAttribute("readonly", "");
 
-        document.getElementById('id_fecha_publicacion').value = fecha_publicacion;
-        document.getElementById('id_fecha_publicacion').setAttribute("readonly", "");
+        document.getElementById('fecha_publicacion').value = fecha_publicacion;
+        document.getElementById('fecha_publicacion').setAttribute("readonly", "");
 
-        document.getElementById('id_area_publicacion').value = area_publicacion;
-        document.getElementById('id_area_publicacion').setAttribute("readonly", "");
+        document.getElementById('area_publicacion').value = area_publicacion;
+        document.getElementById('area_publicacion').setAttribute("readonly", "");
 
-        document.getElementById('id_texto_publicacion').value = texto_publicacion;
-        document.getElementById('id_texto_publicacion').setAttribute("readonly", "");
+        document.getElementById('texto_publicacion').value = texto_publicacion;
+        document.getElementById('texto_publicacion').setAttribute("readonly", "");
 
-        document.getElementById('id_imagen_publicacion').value = imagen_publicacion;
-        document.getElementById('id_imagen_publicacion').setAttribute("readonly", "");
+        document.getElementById('imagen_publicacion').value = imagen_publicacion;
+        document.getElementById('imagen_publicacion').href += imagen_publicacion;
+        document.getElementById('imagen_publicacion').setAttribute("readonly", true);
+
+        document.getElementById('label_nueva_imagen_publicacion').style.display = "none";
+        document.getElementById('nueva_imagen_publicacion').style.display = "none";
 
         let botondelete = document.createElement('button');
         botondelete.id = 'botondelete';
@@ -154,6 +164,9 @@ class Gestion_publicacion extends GestionEntidad {
     
         // eliminar boton delete del form DELETE
         document.getElementById('botondelete').remove();
+
+        document.getElementById('label_nueva_imagen_publicacion').style.display= "none";
+        document.getElementById('nueva_imagen_publicacion').style.display = "none";
     
         // se rellena el action del formulario
         let imgshowcurrent = document.createElement('img');
@@ -183,19 +196,24 @@ class Gestion_publicacion extends GestionEntidad {
         document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_publicacion.comprobar_submit_SEARCH();');
     
         // se coloca el onblur del nombre y se pone a vacio el valor (o podriamos hacerlo en el resetear formusuario
-        document.getElementById('id_id_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_id_publicacion_SEARCH()');
+        document.getElementById('id_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_id_publicacion_SEARCH()');
     
-        //document.getElementById('id_titulo_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_titulo_publicacion_SEARCH()');
+        document.getElementById('titulo_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_titulo_publicacion_SEARCH()');
 
-        document.getElementById('id_autor_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_autor_publicacion_SEARCH()');    
+        document.getElementById('autor_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_autor_publicacion_SEARCH()');    
         
-        document.getElementById('id_fecha_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_fecha_publicacion_SEARCH()');    
+        document.getElementById('fecha_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_fecha_publicacion_SEARCH()');    
         
-        document.getElementById('id_area_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_area_publicacion_SEARCH()');    
+        document.getElementById('area_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_area_publicacion_SEARCH()');    
         
-        document.getElementById('id_texto_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_texto_publicacion_SEARCH()');    
+        document.getElementById('texto_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_texto_publicacion_SEARCH()');    
         
-        document.getElementById('id_imagen_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_imagen_publicacion_SEARCH()');        
+        document.getElementById('imagen_publicacion').setAttribute('onblur', 'return Gestion_publicacion.comprobar_imagen_publicacion_SEARCH()');
+        
+        document.getElementById("label_nueva_imagen_publicacion").style.display = 'none';
+        document.getElementById("nueva_imagen_publicacion").style.display = 'none';
+        document.getElementById('link_imagen_publicacion').style.display = 'none';
+
         
         let botonsearch = document.createElement('button');
         botonsearch.type = 'submit';
@@ -212,13 +230,125 @@ class Gestion_publicacion extends GestionEntidad {
     
     }
 
+    static comprobar_submit() {
 
+        let valor = this.comprobar_id_publicacion();
+        let valor1 = this.comprobar_titulo_publicacion();
+        let valor2 = this.comprobar_autor_publicacion();
+        let valor3 = this.comprobar_fecha_publicacion();
+        let valor4 = this.comprobar_area_publicacion();
+        let valor5 = this.comprobar_texto_publicacion();
+        let valor6 = this.comprobar_nueva_imagen_publicacion()
+    
+    
+        let resultado = (
+          valor &&
+          valor1 &&
+          valor2 &&
+          valor3 &&
+          valor4 &&
+          valor5 &&
+          valor6
+        );
+    
+        return resultado;
+    
+    
+      }
+    
+    
+      static comprobar_submit_SEARCH() {
+    
+        let valor = this.comprobar_id_publicacion_SEARCH();
+        let valor1 = this.comprobar_titulo_publicacion_SEARCH();
+        let valor2 = this.comprobar_autor_publicacion_SEARCH();
+        let valor3 = this.comprobar_fecha_publicacion_SEARCH();
+        let valor4 = this.comprobar_area_publicacion_SEARCH();
+        let valor5 = this.comprobar_texto_publicacion_SEARCH();
+        let valor6 = this.comprobar_imagen_publicacion_SEARCH();
+
+    
+    
+        let resultado = (
+          valor &&
+          valor1 &&
+          valor2 &&
+          valor3 &&
+          valor4 &&
+          valor5 &&
+          valor6
+        );
+    
+        return resultado;
+    
+    
+      }
+
+
+
+      static comprobar_id_publicacion(){
+        return true;
+      }
+
+      static comprobar_titulo_publicacion(){
+        return true;
+      }
+
+      static comprobar_autor_publicacion(){
+        return true;
+      }
+
+      static comprobar_fecha_publicacion(){
+        return true;
+      }
+
+      static comprobar_area_publicacion(){
+        return true;
+      }
+
+      static comprobar_texto_publicacion(){
+        return true;
+      }
+      
+      static comprobar_nueva_imagen_publicacion(){
+        return true;
+      }
+
+      static comprobar_id_publicacion_SEARCH(){
+        return true;
+      }
+
+      static comprobar_titulo_publicacion_SEARCH(){
+        return true;
+      }
+
+      static comprobar_autor_publicacion_SEARCH(){
+        return true;
+      }
+
+      static comprobar_fecha_publicacion_SEARCH(){
+        return true;
+      }
+
+      static comprobar_area_publicacion_SEARCH(){
+        return true;
+      }
+
+      static comprobar_texto_publicacion_SEARCH(){
+        return true;
+      }
+      
+      static comprobar_imagen_publicacion_SEARCH(){
+        return true;
+      }
+
+      
 
     static async ADD() {
         await this.peticionBackGeneral('IU_form', 'publicacion', 'ADD')
             .then((respuesta) => {
                 if (respuesta['ok']) {
-                    this.resetearFormPublicacion();
+                    this.recargarform();
                     this.SEARCH();
                 }
                 else {
@@ -231,7 +361,7 @@ class Gestion_publicacion extends GestionEntidad {
         await this.peticionBackGeneral('IU_form', 'publicacion', 'EDIT')
             .then((respuesta) => {
                 if (respuesta['ok']) {
-                    this.resetearFormPublicacion();
+                    this.recargarform();
                     this.SEARCH();
                 }
                 else {
@@ -244,7 +374,7 @@ class Gestion_publicacion extends GestionEntidad {
         await this.peticionBackGeneral('IU_form', 'publicacion', 'DELETE')
             .then((respuesta) => {
                 if (respuesta['ok']) {
-                    this.resetearFormPublicacion();
+                    this.recargarform();
                     this.SEARCH();
                 }
                 else {
@@ -256,7 +386,7 @@ class Gestion_publicacion extends GestionEntidad {
     static async SEARCH() {
         await this.peticionBackGeneral('IU_form', 'publicacion', 'SEARCH')
             .then((respuesta) => {
-                this.resetearFormPublicacion();
+                this.recargarform();
                 let publicacion = new Gestion_publicacion('publicacion', respuesta['resource'], Array('id_publicacion', 'titulo_publicacion', 'autor_publicacion')); publicacion.mostrartabla();
                 if (respuesta['code'] == 'RECORDSET_VACIO') {
                     document.getElementById('muestradatostabla').innerHTML = 'no hay datos coincidentes con la busqueda';
@@ -271,34 +401,37 @@ class Gestion_publicacion extends GestionEntidad {
         document.getElementById("IU_form").innerHTML = `
     
         
-          <label for="id_id_publicacion" class="label_id_publicacion"></label>
-          <input type="text" id="id_id_publicacion" name="id_publicacion" placeholder="">
-          <div id="div_error_id_publicacion" class="errocampo"><a id="error_id_publicacion"></a></div>
-    
-          <label for="id_titulo_publicacion" class="label_titulo_publicacion"></label>
-          <input type="text" id="id_titulo_programa" name="titulo_programa" placeholder="">
-          <div id="div_error_titulo_publicacion" class="errocampo"><a id="error_titulo_publicacion"></a></div>
-    
-          <label for="id_autor_publicacion" class="label_autor_publicacion"></label>
-          <input type="text" id="id_autor_publicacion" name="autor_publicacion" placeholder="">
-          <div id="div_error_autor_publicacion" class="errocampo"><a id="error_autor_publicacion"></a></div>
-    
-          <label for="id_fecha_publicacion" class="label_fecha_publicacion"></label>
-          <input type="text" id="id_fecha_publicacion" name="fecha_publicacion" placeholder="dd/mm/aaaa">
-          <div id="div_error_fecha_publicacion" class="errocampo"><a id="error_fecha_publicacion"></a></div>
-    
-          <label for="id_area_publicacion" class="label_area_publicacion"></label>
-          <input type="text" id="id_area_publicacion" name="area_publicacion" placeholder="">
-          <div id="div_error_area_publicacion" class="errocampo"><a id="error_area_publicacion"></a></div>
-    
-          <label for="id_texto_publicacion" class="label_texto_publicacion"></label>
-          <input type="text" id="id_texto_publicacion" name="texto_publicacion" placeholder="">
-          <div id="div_error_texto_publicacion" class="errocampo"><a id="error_texto_publicacion"></a></div>
-    
-          <label for="id_imagen_publicacion" class="label_imagen_publicacion"></label>
-          <input type="file" id="id_imagen_publicacion" name="imagen_publicacion">
-          <div id="div_error_imagen_publicacion" class="errocampo"><a id="error_imagen_publicacion"></a></div>
-    
+            <label for="id_publicacion" class="label_id_publicacion"></label>
+            <input type="text" id="id_publicacion" name="id_publicacion" placeholder="">
+            <div id="div_error_id_publicacion" class="errocampo"><a id="error_id_publicacion"></a></div>
+            <br>
+            <label for="titulo_publicacion" class="label_titulo_publicacion"></label>
+            <input type="text" id="titulo_publicacion" name="titulo_publicacion" placeholder="">
+            <div id="div_error_titulo_publicacion" class="errocampo"><a id="error_titulo_publicacion"></a></div>
+            <br>
+            <label for="autor_publicacion" class="label_autor_publicacion"></label>
+            <input type="text" id="autor_publicacion" name="autor_publicacion" placeholder="">
+            <div id="div_error_autor_publicacion" class="errocampo"><a id="error_autor_publicacion"></a></div>
+            <br>
+            <label for="fecha_publicacion" class="label_fecha_publicacion"></label>
+            <input type="text" id="fecha_publicacion" name="fecha_publicacion" placeholder="dd/mm/aaaa">
+            <div id="div_error_fecha_publicacion" class="errocampo"><a id="error_fecha_publicacion"></a></div>
+            <br>
+            <label for="area_publicacion" class="label_area_publicacion"></label>
+            <input type="text" id="area_publicacion" name="area_publicacion" placeholder="">
+            <div id="div_error_area_publicacion" class="errocampo"><a id="error_area_publicacion"></a></div>
+            <br>
+            <label for="texto_publicacion" class="label_texto_publicacion"></label>
+            <input type="text" id="texto_publicacion" name="texto_publicacion" placeholder="">
+            <div id="div_error_texto_publicacion" class="errocampo"><a id="error_texto_publicacion"></a></div>
+            <br>
+            <label id="label_imagen_publicacion" for="imagen_publicacion" class="label_imagen_publicacion"></label>
+            <input type="text" id="imagen_publicacion" name="imagen_publicacion">
+            <a id="link_imagen_publicacion" href=""><img src="./iconos/FILE.png" /></a> <br>
+            <label id="label_nueva_imagen_publicacion" for="nueva_imagen_publicacion" class="label_nueva_imagen_publicacion"></label>
+            <input type="file" id="nueva_imagen_publicacion" name="nueva_imagen_publicacion">
+            <div id="div_error_modo_aplicacion_publicacion" class="errocampo"><a id="error_modo_aplicacion_publicacion"></a></div>
+            <br>
           `;
 
         //obtener campos del formulario

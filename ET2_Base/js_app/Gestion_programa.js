@@ -255,6 +255,9 @@ class Gestion_programa extends GestionEntidad {
     document.getElementById('imagen_programa').href += imagen_programa;
     document.getElementById('imagen_programa').setAttribute("readonly", true);
 
+    document.getElementById('label_nueva_imagen_programa').style.display = "none";
+    document.getElementById('nueva_imagen_programa').style.display = "none";
+
 
 
     let botondelete = document.createElement('button');

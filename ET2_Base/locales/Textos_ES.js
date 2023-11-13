@@ -65,6 +65,7 @@ let textos_ES={
     "area_publicacion" : "Area de la publicacion",
     "texto_publicacion" : "Texto de la publicacion",
     "imagen_publicacion" : "Imagen de la publicacion",
+    "nueva_imagen_programa" : "Nueva imagen publicacion",
 
 
     //label's_programa
@@ -88,7 +89,8 @@ let textos_ES={
     "label_formato_programa" : "Introduzca formato del programa : ",
     "label_modo_correccion_programa" : "Introduzca modo de correccion del programa :",
     "label_modo_aplicacion_programa" : "Introduzca modo de aplicacion del programa : ",
-    "label_nueva_imagen_programa" : "Introduzca imagen del programa : ",
+    "label_imagen_programa" : "Introduzca imagen del programa",
+    "label_nueva_imagen_programa" : "Introduzca nueva imagen del programa : ",
 
     //label's_publicacion
     "label_id_publicacion" : "Introduzca identificacion publicacion : ",
@@ -98,6 +100,7 @@ let textos_ES={
     "label_area_publicacion" : "Introduzca area publicacion : ",
     "label_texto_publicacion" : "Introduzca texto publicacion : ",
     "label_imagen_publicacion" : "Introduzca imagen publicacion : ",
+    "label_nueva_imagen_publicacion" : "Introduzca imagen de la publicacion",
 
     //mensajes de error programa
     "KO_formato_id_programa" : "Error solo digitos",
