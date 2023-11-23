@@ -872,26 +872,34 @@ class Gestion_programa extends GestionEntidad {
   }
 
   static comprobar_nuevo_fichero_programa() {
-
+    //##################################revisar esto y en search la longitud de la busqueda########################################3
     const tamMax = 2000000;
-    const fichero = document.getElementById('nuevo_fichero_programa').file[0];
+    const fichero = document.getElementById('nuevo_fichero_programa').files[0];
 
-    if (fichero.size <= tamMax) {
-      const nombreFichero = fichero.name;
-      const extension = nombreFichero.split('.').pop().toLowercase();
+    if (fichero.size == null) {
 
-      if (extension === 'pdf' || extension === 'doc' || extension === 'docx') {
-        DOM_class.mostrarexitovalor('nuevo_fichero_programa');
-        return true;
-      }
-      else {
-        DOM_class.mostrardivmensajeserrordebajo('nuevo_fichero_programa', 'KO_fromato_fichero_programa');
-        return false;
-      }
+      DOM_class.mostrardivmensajeserrordebajo('nuevo_fichero_programa', 'KO_nuevo_fichero_programa_tam_min');
+      return false;
     }
     else {
-      DOM_class.mostrardivmensajeserrordebajo('nuevo_fichero_programa', 'KO_fichero_programa_tam_max');
-      return false;
+
+      if (fichero.size <= tamMax) {
+        const nombreFichero = fichero.name;
+        const extension = nombreFichero.split('.').pop().toLowercase();
+
+        if (extension === 'pdf' || extension === 'doc' || extension === 'docx') {
+          DOM_class.mostrarexitovalor('nuevo_fichero_programa');
+          return true;
+        }
+        else {
+          DOM_class.mostrardivmensajeserrordebajo('nuevo_fichero_programa', 'KO_fromato_nuevo_fichero_programa');
+          return false;
+        }
+      }
+      else {
+        DOM_class.mostrardivmensajeserrordebajo('nuevo_fichero_programa', 'KO_nuevo_fichero_programa_tam_max');
+        return false;
+      }
     }
   }
 
@@ -959,10 +967,15 @@ class Gestion_programa extends GestionEntidad {
   }
 
   static comprobar_nueva_imagen_programa() {
-
+    //##########################################revisar esto y en el search la logitud de la busqueda#########################################
     const tamMax = 20000;
-    const imagen = document.getElementById('nueva_imagen_programa').file[0];
+    const imagen = document.getElementById('nueva_imagen_programa').files[0];
 
+    if(imagen.value == null){
+      DOM_class.mostrardivmensajeserrordebajo('nueva_imagen_programa', 'KO_nueva_imagen_programa_tam_min');
+      return false;
+    }
+    else{
     if (imagen.size <= tamMax) {
       const nombreImagen = imagen.name;
       const extension = nombreImagen.split('.').pop().toLowercase();
@@ -972,14 +985,15 @@ class Gestion_programa extends GestionEntidad {
         return true;
       }
       else {
-        DOM_class.mostrardivmensajeserrordebajo('nueva_imagen_programa', 'KO_fromato_imagen_programa');
+        DOM_class.mostrardivmensajeserrordebajo('nueva_imagen_programa', 'KO_fromato_nueva_imagen_programa');
         return false;
       }
     }
     else {
-      DOM_class.mostrardivmensajeserrordebajo('nueva_imagen_programa', 'KO_imagen_programa_tam_max');
+      DOM_class.mostrardivmensajeserrordebajo('nueva_imagen_programa', 'KO_nueva_imagen_programa_tam_max');
       return false;
     }
+  }
   }
 
 
@@ -1255,7 +1269,27 @@ class Gestion_programa extends GestionEntidad {
   }
 
   static comprobar_fichero_programa_SEARCH() {
-    return true
+    
+    const tamMax = 2000000;
+    const fichero = document.getElementById('nuevo_fichero_programa').files[0];
+
+    if (fichero.size <= tamMax) {
+      const nombreFichero = fichero.name;
+      const extension = nombreFichero.split('.').pop().toLowercase();
+
+      if (extension === 'pdf' || extension === 'doc' || extension === 'docx') {
+        DOM_class.mostrarexitovalor('nuevo_fichero_programa');
+        return true;
+      }
+      else {
+        DOM_class.mostrardivmensajeserrordebajo('nuevo_fichero_programa', 'KO_fromato_nuevo_fichero_programa');
+        return false;
+      }
+    }
+    else {
+      DOM_class.mostrardivmensajeserrordebajo('nuevo_fichero_programa', 'KO_nuevo_fichero_programa_tam_max');
+      return false;
+    }
   }
 
   static comprobar_enlace_programa_SEARCH() {
@@ -1291,7 +1325,26 @@ class Gestion_programa extends GestionEntidad {
   }
 
   static comprobar_imagen_programa_SEARCH() {
-    return true;
+    const tamMax = 20000;
+    const imagen = document.getElementById('nueva_imagen_programa').files[0];
+
+    if (imagen.size <= tamMax) {
+      const nombreImagen = imagen.name;
+      const extension = nombreImagen.split('.').pop().toLowercase();
+
+      if (extension === 'jpg' || extension === 'jpeg') {
+        DOM_class.mostrarexitovalor('nueva_imagen_programa');
+        return true;
+      }
+      else {
+        DOM_class.mostrardivmensajeserrordebajo('nueva_imagen_programa', 'KO_fromato_nueva_imagen_programa');
+        return false;
+      }
+    }
+    else {
+      DOM_class.mostrardivmensajeserrordebajo('nueva_imagen_programa', 'KO_nueva_imagen_programa_tam_max');
+      return false;
+    }
   }
   //preguntar profesor
 
@@ -1379,7 +1432,7 @@ class Gestion_programa extends GestionEntidad {
       <div id="div_error_autor_original_programa" class="errocampo"><a id="error_autor_original_programa"></a></div>
       <br>
       <label for="ano_programa" class="label_ano_programa"></label>
-      <input type="text" id="ano_programa" name="ano_programa" placeholder="dd/mm/aaaa">
+      <input type="text" id="ano_programa" name="ano_programa" placeholder="">
       <div id="div_error_ano_programa" class="errocampo"><a id="error_ano_programa"></a></div>
       <br>
       <label for="ano_original_programa" class="label_ano_original_programa"></label>

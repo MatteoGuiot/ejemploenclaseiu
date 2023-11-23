@@ -13,7 +13,7 @@ class validacionesatomicas{
     }
 
     static size_maximo(id, valormaximo){
-        if (document.getElementById(id).value.length >= valormaximo){
+        if (document.getElementById(id).value.length >= valormaximo + 1){
             return false;
         }
         else{
@@ -54,6 +54,24 @@ class validacionesatomicas{
             return true;
         }
     }
+
+    static digitosFecha(id){
+        
+        const pattern = /^\d{4}-\d{2}-\d{2}$/;
+
+        if(document.getElementById(id).value != ''){
+            if(!pattern.test(document.getElementById(id).value)){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        else{
+            return true;
+        }
+    }
+
 
     static alfabeticoAcentosÑyEspacios(id){
 
@@ -142,15 +160,18 @@ class validacionesatomicas{
 
     static ascii(id){
 
-        cadena = document.getElementById(id).value;
-
-        for (var i = 0; i< cadena.length; i++){
-            var charCode = cadena.charCodeAt(i);
+        if(document.getElementById(id).value != ''){
+            for (var i = 0; i< document.getElementById(id).value.length; i++){
+                var charCode = document.getElementById(id).value.charCodeAt(i);
             
-            if(charCode <0 || charCode > 127){
-                return false;
+                if(charCode <0 || charCode > 127){
+                    return false;
+                }
             }
+            return true;
         }
-        return true;
+        else{
+            return true;
+        }
     }
 }

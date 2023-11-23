@@ -159,8 +159,10 @@ let textos_ES={
     "KO_descrip_interp_programa_tam_min" : "Descrip interp programa peta minimo",
     "KO_descrip_interp_programa_tam_max" : "Descrip interp programa peta maximo",
 
-    "KO_formato_fichero_programa" : "Error solo formatos .pdf, .doc o .docx",
-    "KO_fichero_programa_tam_max" : "Fichero programa peta maximo",
+    "KO_formato_nuevo_fichero_programa" : "Error solo formatos .pdf, .doc o .docx",
+    "KO_nuevo_fichero_programa_tam_max" : "Fichero programa peta maximo",
+    "KO_nuevo_fichero_programa_tam_min" : "Fichero programa peta minimo",
+
 
     "KO_formato_enlace_programa" : "Error solo alfabeticos y ':', '/' o '.'",
     "KO_enlace_programa_tam_min" : "Enlace programa peta minimo",
@@ -172,13 +174,40 @@ let textos_ES={
 
     "KO_modo_aplicacion_programa" : "Error debe seleccionar una opcion",
 
-    "KO_formato_imagen_programa" : "Error solo formatos .jpg o .jpeg",
-    "KO_imagen_programa_tam_max" : "Imagen programa peta maximo"
-
-
+    "KO_formato_nueva_imagen_programa" : "Error solo formatos .jpg o .jpeg",
+    "KO_nueva_imagen_programa_tam_max" : "Imagen programa peta maximo",
+    "KO_nueva_imagen_programa_tam_min" : "Imagen programa peta minimo",
 
 
     //mensajes error publicacion
+
+    "KO_formato_id_publicacion" : "Error solo digitos",
+    "KO_id_publicacion_tam_min" : "Id publicacion peta minimo",
+    "KO_id_publicacion_tam_max" : "Id publicacion peta maximo",
+
+    "KO_formato_titulo_publicacion" : "Error solo alfabeticos con ñ o espacios",
+    "KO_titulo_publicacion_tam_min" : "Titulo publicacion peta minimo",
+    "KO_titulo_publicacion_tam_max" : "Titulo publicacion peta maximo",
+    
+    "KO_formato_autor_publicacion" : "Error solo alfabeticos con ñ o espacios",
+    "KO_autor_publicacion_tam_min" : "Autor publicacion peta minimo",
+    "KO_autor_publicacion_tam_max" : "Autor publicacion peta maximo",
+
+    "KO_formato_fecha_publicacion" : "Error de formato dd/mm/aaaa solo digitos",
+
+    "KO_formato_area_publicacion" : "Error solo digitos",
+    "KO_area_publicacion_tam_min" : "Area publicacion peta minimo",
+    "KO_area_publicacion_tam_max" : "Area publicacion peta maximo",
+
+    "KO_formato_texto_publicacion" : "Error solo ascii",
+    "KO_texto_publicacion_tam_min" : "Texto publicacion peta minimo",
+    "KO_texto_publicacion_tam_max" : "Texto publicacion peta maximo",
+
+    "KO_formato_nueva_imagen_publicacion" : "Error formato solo .jpg o .jpeg",
+    "KO_nueva_imagen_publicacion_tam_max" : "Id publicacion peta maximo",
+
+    "KO_formato_imagen_publicacion" : "Error formato solo .jpg o .jpeg",
+    "KO_imagen_publicacion_tam_max" : "Id publicacion peta maximo",
 
     
 };

@@ -99,37 +99,37 @@ Array(
     Array('6', 'programa', 'tamaño mayor o igual que 7 && tamaño menor o igual que 60 && Alfabetico sin acentos ni ñ ni espacios && formato igual a jpg o jpeg && tamaño igual o menor a 20000 bytes', true, 'Exito'),
 
     //publicacion
-    Array('publicacion','id_publicacion', 1, 'tamaño menor que 1', false, 'El id de publicacoin debe tener como minimo un carater'),
-    Array('publicacion','id_publicacion', 2, 'tamaño mayor que 6', false, 'El id de publicacion debe tener como maximo seis caracteres'),
-    Array('publicacion','id_publicacion', 3, 'Algun caracter != digito', false, 'El id de publicacion solo puede contener digitos'),
-    Array('publicacion','id_publicacion', 4, 'tamaño mayor o igual a 1 && tamaño menor o igual a 6 && digitos', true,),
+    Array('1','publicacion', 'tamaño menor que 1', false, 'El id de publicacoin debe tener como minimo un carater'),
+    Array('2','publicacion', 'tamaño mayor que 6', false, 'El id de publicacion debe tener como maximo seis caracteres'),
+    Array('3','publicacion', 'Algun caracter != digito', false, 'El id de publicacion solo puede contener digitos'),
+    Array('4','publicacion', 'tamaño mayor o igual a 1 && tamaño menor o igual a 6 && digitos', true, 'Exito'),
 
-    Array('publicacion','titulo_publicacion', 1, 'tamaño menor que 6', false, 'El titulo de publicacoin debe tener como minimo seis carateres'),
-    Array('publicacion','titulo_publicacion', 2, 'tamaño mayor que 80', false, 'El titulo de publicacion debe tener como maximo ochenta caracteres'),
-    Array('publicacion','titulo_publicacion', 3, 'Algun caracter != alfabeticos con acento, ñ o espacio', false, 'El titulo de publicacion solo puede contener caracteres alfabeticos con acento, ñ o espacio'),
-    Array('publicacion','titulo_publicacion', 4, 'tamaño mayor o igual a 6 && tamaño menor o igual a 80 && alfabeticos con acento, ñ o espacio', true, 'Exito'),
+    Array('1', 'publicacion', 'tamaño menor que 6', false, 'El titulo de publicacoin debe tener como minimo seis carateres'),
+    Array('2', 'publicacion', 'tamaño mayor que 80', false, 'El titulo de publicacion debe tener como maximo ochenta caracteres'),
+    Array('3', 'publicacion', 'Algun caracter != alfabeticos con acento, ñ o espacio', false, 'El titulo de publicacion solo puede contener caracteres alfabeticos con acento, ñ o espacio'),
+    Array('4', 'publicacion', 'tamaño mayor o igual a 6 && tamaño menor o igual a 80 && alfabeticos con acento, ñ o espacio', true, 'Exito'),
 
-    Array('publicacion','autor_publicacion', 1, 'tamaño menor que 6', false, 'El autor de publicacoin debe tener como minimo seis carateres'),
-    Array('publicacion','autor_publicacion', 2, 'tamaño mayor que 40', false, 'El autor de publicacion debe tener como maximo cuarenta caracteres'),
-    Array('publicacion','autor_publicacion', 3, 'Algun caracter != alfabeticos con acento, ñ o espacio', false, 'El autor de publicacion solo puede contener caracteres alfabeticos con acento, ñ o espacio'),
-    Array('publicacion','autor_publicacion', 4, 'tamaño mayor o igual a 6 && tamaño menor o igual a 40 && alfabeticos con acento, ñ o espacio', true, 'Exito'),
+    Array('1', 'publicacion', 'tamaño menor que 6', false, 'El autor de publicacoin debe tener como minimo seis carateres'),
+    Array('2', 'publicacion', 'tamaño mayor que 40', false, 'El autor de publicacion debe tener como maximo cuarenta caracteres'),
+    Array('3', 'publicacion', 'Algun caracter != alfabeticos con acento, ñ o espacio', false, 'El autor de publicacion solo puede contener caracteres alfabeticos con acento, ñ o espacio'),
+    Array('4', 'publicacion', 'tamaño mayor o igual a 6 && tamaño menor o igual a 40 && alfabeticos con acento, ñ o espacio', true, 'Exito'),
 
-    Array('publicacion','fecha_publicacion', 1, 'foramto de la fecha distinto de dd/mm/aaaa', false, 'Formato de fecha incorrecto, debe ser dd/mm/aaaa'),
-    Array('publicacion','fecha_publicacion', 2, 'foramto de la fecha igual a dd/mm/aaaa', true, 'Exito'),
+    Array('2', 'publicacion', 'foramto de la fecha distinto de dd/mm/aaaa', false, 'Formato de fecha incorrecto, debe ser dd/mm/aaaa'),
+    Array('3', 'publicacion', 'digitos y "/" && foramto de la fecha igual a dd/mm/aaaa', true, 'Exito'),
 
-    Array('publicacion','area_publicacion', 1, 'tamaño menor que 1', false, 'El area de publicacoin debe tener como minimo un carater'),
-    Array('publicacion','area_publicacion', 2, 'tamaño mayor que 6', false, 'El area de publicacion debe tener como maximo seis caracteres'),
-    Array('publicacion','area_publicacion', 3, 'Algun caracter != digito', false, 'El area de publicacion solo puede contener digitos'),
-    Array('publicacion','area_publicacion', 4, 'tamaño mayor o igual a 1 && tamaño menor o igual a 6 && digitos', true, 'Exito'),
+    Array('1', 'publicacion', 'tamaño menor que 1', false, 'El area de publicacoin debe tener como minimo un carater'),
+    Array('2', 'publicacion', 'tamaño mayor que 6', false, 'El area de publicacion debe tener como maximo seis caracteres'),
+    Array('3', 'publicacion', 'Algun caracter != digito', false, 'El area de publicacion solo puede contener digitos'),
+    Array('4', 'publicacion', 'tamaño mayor o igual a 1 && tamaño menor o igual a 6 && digitos', true, 'Exito'),
 
-    Array('publicacion','texto_publicacion', 1, 'tamaño menor que 30', false, 'El texto de publicacoin debe tener como minimo treinta carateres'),
-    Array('publicacion','texto_publicacion', 2, 'tamaño mayor que 8000', false, 'El texto de publicacion debe tener como maximo ocho mil caracteres'),
-    Array('publicacion','texto_publicacion', 3, 'Algun caracter != ascii', false, 'El texto de publicacion solo puede contener caracteres ascii'),
-    Array('publicacion','texto_publicacion', 4, 'tamaño mayor o igual a 30 && tamaño menor o igual a 8000 && ascii', true, 'Exito'),
+    Array('1', 'publicacion', 'tamaño menor que 30', false, 'El texto de publicacoin debe tener como minimo treinta carateres'),
+    Array('2', 'publicacion', 'tamaño mayor que 8000', false, 'El texto de publicacion debe tener como maximo ocho mil caracteres'),
+    Array('3', 'publicacion', 'Algun caracter != ascii', false, 'El texto de publicacion solo puede contener caracteres ascii'),
+    Array('4', 'publicacion', 'tamaño mayor o igual a 30 && tamaño menor o igual a 8000 && ascii', true, 'Exito'),
 
-    Array('publicacion','imagen_publicacion', 1, 'tamaño menor que 7', false, 'La imagen de publicacoin debe tener como minimo siete carateres'),
-    Array('publicacion','imagen_publicacion', 2, 'tamaño mayor que 50', false, 'La imagen de publicacion debe tener como maximo cincuenta caracteres'),
-    Array('publicacion','imagen_publicacion', 3, 'Algun caracter != alfabeticos sin acentos ni ñ ni espacios', false, 'El id de publicacion solo puede contener caracteres alfabeticos sin acentos ni ñ ni espacios'),
-    Array('publicacion','imagen_publicacion', 4, 'tamaño mayor o igual a 7 && tamaño menor o igual a 50 && alfabeticos sin acentos ni ñ ni espacios', true, 'Exito')
+    Array('1', 'publicacion', 'tamaño menor que 7', false, 'La imagen de publicacoin debe tener como minimo siete carateres'),
+    Array('2', 'publicacion', 'tamaño mayor que 50', false, 'La imagen de publicacion debe tener como maximo cincuenta caracteres'),
+    Array('3', 'publicacion', 'Algun caracter != alfabeticos sin acentos ni ñ ni espacios', false, 'El id de publicacion solo puede contener caracteres alfabeticos sin acentos ni ñ ni espacios'),
+    Array('4', 'publicacion', 'tamaño mayor o igual a 7 && tamaño menor o igual a 50 && alfabeticos sin acentos ni ñ ni espacios', true, 'Exito')
 
 );
