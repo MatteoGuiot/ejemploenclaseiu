@@ -446,7 +446,7 @@ class Gestion_publicacion extends GestionEntidad {
     if(validacionesatomicas.validarImagenVacio(imagen)){
     }
     else{
-      DOM_class.mostrardivmensajeserrordebajo('nueva_imagen_publicacion', 'KO_nueva_imagen_publicacion_vacio');
+      DOM_class.mostrardivmensajeserrordebajo('nueva_imagen_publicacion', 'KO_nueva_imagen_publicacion_tam_min');
       return false;
     }
 
@@ -573,7 +573,7 @@ class Gestion_publicacion extends GestionEntidad {
   }
 
   static comprobar_imagen_publicacion_SEARCH() {
-
+    
     if (validacionesatomicas.soloAlfabetico('imagen_publicacion')) {
     }
     else {
